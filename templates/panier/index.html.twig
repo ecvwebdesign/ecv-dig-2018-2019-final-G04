@@ -1,9 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PanierController!{% endblock %}
+{% block title %}Panier{% endblock %}
 
 {% block body %}
-    {% for article in commande %}
-        <p>{{ article.id}}</p>
+
+    {% for autreProduit in bjr %}
+        <h3>{{ autreProduit|first.libelle }}</h3>
+        <img src="{{ autreProduit|first.image }}" alt="">
+        <p>{{ autreProduit|first.prix }} €</p>
+        <p>{{ autreProduit|first.quantite }} restant</p>
+        <p>{{ autreProduit|first.taille }}</p>
+        <form action="{{  path("singleProduit", {"id": autreProduit|fir.id}) }}">
+            <input type="submit" value="Voir plus">
+        </form>
     {% endfor %}
 {% endblock %}

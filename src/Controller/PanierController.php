@@ -21,9 +21,14 @@ class PanierController extends AbstractController
                 'user' => $user
             ]
         );
+        $bjr = array();
+        foreach($commande as $test){
+            $bjr[] = $test->getProduit()->getValues();;
+        }
 
         return $this->render('panier/index.html.twig', [
             'commande' => $commande,
+            'bjr' => $bjr,
         ]);
     }
     /**
