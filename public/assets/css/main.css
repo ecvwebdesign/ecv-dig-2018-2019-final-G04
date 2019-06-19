@@ -1,0 +1,78 @@
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main .h1,
+main .h2,
+main .h3,
+main .h4,
+main .h5 {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.5rem;
+  display: block;
+}
+main h1,
+main .h1 {
+  font-size: 3.4rem;
+}
+main h2,
+main .h2 {
+  font-size: 3rem;
+}
+main h3,
+main .h3 {
+  font-size: 2.6rem;
+}
+main h4,
+main .h4 {
+  font-size: 2rem;
+}
+main h5,
+main .h5 {
+  font-size: 1.8rem;
+}
+main a,
+main p,
+main span {
+  font-size: 1.6rem;
+}
+html {
+  height: 100%;
+  font-size: calc(1em * 0.625);
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  body #wrapper {
+    flex: 1 0 auto;
+  }
+  body #footer {
+    flex-shrink: 0;
+  }
+}
+body noscript div {
+  margin: 0 1em;
+}
+body .txt-center {
+  text-align: center;
+}
+body .txt-right {
+  text-align: right;
+}
+body .txt-left {
+  text-align: left;
+}
+body .d-flex {
+  display: flex;
+}
+/*# sourceMappingURL=main.css.map */

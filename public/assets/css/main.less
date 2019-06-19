@@ -1,0 +1,62 @@
+@import "colors/colors";
+@import "fonts/fonts";
+@import "responsive";
+@import "header";
+@import "content";
+@import "footer";
+
+html {
+    height: 100%;
+    font-size: calc(1em * .625);
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    font-family: @family-default;
+    font-size: 1.6rem;
+    color: @blanc;
+
+    @media @from-tablet {
+        display: flex;
+        flex-direction: column;
+
+        #wrapper {
+            flex: 1 0 auto;
+        }
+
+        #footer {
+            flex-shrink: 0;
+        }
+    }
+
+    noscript {
+        div {
+            margin: 0 1em;
+        }
+    }
+
+    &.home {
+        @import 'homepage';
+    }
+
+    .txt-center {
+        text-align: center;
+    }
+
+    .txt-right {
+        text-align: right;
+    }
+
+    .txt-left {
+        text-align: left;
+    }
+
+    .d-flex {
+        display: flex;
+    }
+
+    a:not(.btn) {
+
+    }
+}
