@@ -24,10 +24,9 @@ class RegistrationFormType extends AbstractType
             ->add('prenom',TextType::class)
             ->add('civilite',TextType::class)
             ->add('mobile', IntegerType::class)
-            ->add('plainPassword', RepeatedType::class, [
+            ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
-                'type' => PasswordType::class,
                 'mapped' => false,
                 'constraints' => [
                     new NotBlank([

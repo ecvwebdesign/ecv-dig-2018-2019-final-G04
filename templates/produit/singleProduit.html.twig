@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+
+        <h3>{{ produit.libelle }}</h3>
+        <img src="{{ produit.image }}" alt="">
+        <p>{{ produit.prix }} €</p>
+        <p>{{ produit.quantite }} restant</p>
+        <p>{{ produit.taille }}</p>
+        <form action="{{  path("panier", {"id": produit.id}) }}">
+                <input type="submit" value="Ajouter au panier">
+        </form>
+        <h2>Produits similaires</h2>
+        {% for autreProduit in produitsSimilaires %}
+                {% if autreProduit.id != produit.id %}
+                        <h3>{{ autreProduit.libelle }}</h3>
+                        <img src="{{ autreProduit.image }}" alt="">
+                        <p>{{ autreProduit.prix }} €</p>
+                        <p>{{ autreProduit.quantite }} restant</p>
+                        <p>{{ autreProduit.taille }}</p>
+                        <form action="{{  path("singleProduit", {"id": autreProduit.id}) }}">
+                                <input type="submit" value="Voir plus">
+                        </form>
+                {% endif %}
+        {% endfor %}
+{% endblock %}

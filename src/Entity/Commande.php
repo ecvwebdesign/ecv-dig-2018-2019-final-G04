@@ -16,7 +16,7 @@ class Commande
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    public $id;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="commandes")
@@ -33,6 +33,11 @@ class Commande
      * @ORM\OneToMany(targetEntity="App\Entity\CommandeAdresses", mappedBy="Commande")
      */
     private $commandeAdresses;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $commandeType;
 
     public function __construct()
     {
@@ -110,6 +115,18 @@ class Commande
                 $commandeAdress->setCommande(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCommandeType(): ?int
+    {
+        return $this->commandeType;
+    }
+
+    public function setCommandeType(int $commandeType): self
+    {
+        $this->commandeType = $commandeType;
 
         return $this;
     }

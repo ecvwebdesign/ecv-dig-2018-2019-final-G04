@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PanierController!{% endblock %}
+
+{% block body %}
+    {% for article in commande %}
+        <p>{{ article.id}}</p>
+    {% endfor %}
+{% endblock %}

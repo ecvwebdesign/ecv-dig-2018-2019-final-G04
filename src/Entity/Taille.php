@@ -29,7 +29,7 @@ class Taille
     private $short;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Produit", mappedBy="Taille")
+     * @ORM\OneToMany(targetEntity="App\Entity\Produit", mappedBy="taille", orphanRemoval=true)
      */
     private $produits;
 
@@ -79,7 +79,7 @@ class Taille
     {
         if (!$this->produits->contains($produit)) {
             $this->produits[] = $produit;
-            $produit->addTaille($this);
+            $produit->setTaille($this);
         }
 
         return $this;
@@ -89,9 +89,17 @@ class Taille
     {
         if ($this->produits->contains($produit)) {
             $this->produits->removeElement($produit);
-            $produit->removeTaille($this);
+            // set the owning side to null (unless already changed)
+            if ($produit->getTaille() === $this) {
+                $produit->setTaille(null);
+            }
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getShort();
     }
 }

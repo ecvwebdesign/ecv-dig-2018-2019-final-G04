@@ -21,7 +21,7 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $libelle;
+    public $libelle;
 
     /**
      * @ORM\Column(type="integer")
@@ -34,18 +34,24 @@ class Produit
     private $prix;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Taille", inversedBy="produits")
-     */
-    private $taille;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Commande", mappedBy="Produit")
      */
     private $commandes;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Taille", inversedBy="produits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $taille;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $image;
+
+
     public function __construct()
     {
-        $this->taille = new ArrayCollection();
         $this->commandes = new ArrayCollection();
     }
 
@@ -91,32 +97,6 @@ class Produit
     }
 
     /**
-     * @return Collection|Taille[]
-     */
-    public function getTaille(): Collection
-    {
-        return $this->taille;
-    }
-
-    public function addTaille(Taille $taille): self
-    {
-        if (!$this->taille->contains($taille)) {
-            $this->taille[] = $taille;
-        }
-
-        return $this;
-    }
-
-    public function removeTaille(Taille $taille): self
-    {
-        if ($this->taille->contains($taille)) {
-            $this->taille->removeElement($taille);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Commande[]
      */
     public function getCommandes(): Collection
@@ -143,4 +123,29 @@ class Produit
 
         return $this;
     }
+
+    public function getTaille(): ?Taille
+    {
+        return $this->taille;
+    }
+
+    public function setTaille(?Taille $taille): self
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): self
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
 }

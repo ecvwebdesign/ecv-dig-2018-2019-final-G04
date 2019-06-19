@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        Taille:
+              class: App\Entity\Taille
+              form:
+                  fields: [libelle, short]
+        Produit:
+              class: App\Entity\Produit
+              form:
+                fields:
+                  - 'libelle'
+                  - 'quantite'
+                  - 'prix'
+                  - 'taille'
+                  - 'image'
+        Commande:
+          class: App\Entity\Commande
+        User:
+          class: App\Entity\User
