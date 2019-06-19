@@ -1,5 +1,6 @@
 @import "colors/colors";
 @import "fonts/fonts";
+@import "responsive";
 @import "header";
 @import "content";
 @import "footer";
@@ -16,7 +17,7 @@ body {
     font-size: 1.6rem;
     color: @blanc;
 
-    @media screen and (min-width: 768px) {
+    @media @from-tablet {
         display: flex;
         flex-direction: column;
 
