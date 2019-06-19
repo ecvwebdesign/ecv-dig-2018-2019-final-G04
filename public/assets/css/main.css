@@ -48,7 +48,7 @@ body {
   font-size: 1.6rem;
   color: #ffffff;
 }
-@media screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
