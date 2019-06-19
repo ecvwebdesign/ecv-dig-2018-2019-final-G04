@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a0e725df-a4f3-43dd-a901-4b0d168df9b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/colors/colors.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/content.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/fonts/fonts.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/footer.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/header.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/homepage.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/main.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/responsive.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a0e725df-a4f3-43dd-a901-4b0d168df9b7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,12 +318,20 @@
       <workItem from="1560780083048" duration="27000" />
       <workItem from="1560780114145" duration="2615000" />
       <workItem from="1560842389647" duration="5016000" />
-      <workItem from="1560950329444" duration="741000" />
+      <workItem from="1560950329444" duration="999000" />
     </task>
+    <task id="LOCAL-00001" summary="code less">
+      <created>1560951142937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560951142937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22709000" />
+    <option name="totallyTimeSpent" value="22967000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,9 +344,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19731544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -362,7 +358,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.1985294" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1985294" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -393,6 +389,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code less" />
+    <option name="LAST_COMMIT_MESSAGE" value="code less" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
