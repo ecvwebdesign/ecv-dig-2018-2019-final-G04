@@ -35,6 +35,8 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/packages/easy_admin.yml">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/css/main.less">
           <provider selected="true" editor-type-id="text-editor">
@@ -105,8 +107,9 @@
       <find>libelle</find>
       <find>plainPas</find>
       <find>taille</find>
-      <find>singleMovie</find>
       <find>array</find>
+      <find>singleMovie</find>
+      <find>produit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -613,7 +616,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Produit.php">
+    <entry file="file://$PROJECT_DIR$/templates/produit/singleProduit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
