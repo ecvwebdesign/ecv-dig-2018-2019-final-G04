@@ -49,6 +49,18 @@ class Produit
      */
     private $image;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\ProduitType", inversedBy="produits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $produitType;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Couleurs", inversedBy="produits")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $couleur;
+
 
     public function __construct()
     {
@@ -144,6 +156,30 @@ class Produit
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getProduitType(): ?ProduitType
+    {
+        return $this->produitType;
+    }
+
+    public function setProduitType(?ProduitType $produitType): self
+    {
+        $this->produitType = $produitType;
+
+        return $this;
+    }
+
+    public function getCouleur(): ?Couleurs
+    {
+        return $this->couleur;
+    }
+
+    public function setCouleur(?Couleurs $couleur): self
+    {
+        $this->couleur = $couleur;
 
         return $this;
     }

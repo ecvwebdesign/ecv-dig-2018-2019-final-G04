@@ -12,8 +12,20 @@ easy_admin:
                   - 'quantite'
                   - 'prix'
                   - 'taille'
+                  - 'couleur'
                   - 'image'
+                  - 'produitType'
         Commande:
           class: App\Entity\Commande
         User:
           class: App\Entity\User
+        Couleurs:
+          class: App\Entity\Couleurs
+          form:
+            fields:
+              - 'libelle'
+        ProduitType:
+          class: App\Entity\ProduitType
+          form:
+            fields:
+              - 'libelle'

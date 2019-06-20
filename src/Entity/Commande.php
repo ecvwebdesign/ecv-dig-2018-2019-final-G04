@@ -39,10 +39,16 @@ class Commande
      */
     private $commandeType;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CommandeArticles", mappedBy="commande")
+     */
+    private $commandeArticles;
+
     public function __construct()
     {
         $this->Produit = new ArrayCollection();
         $this->commandeAdresses = new ArrayCollection();
+        $this->commandeArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -58,32 +64,6 @@ class Commande
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Produit[]
-     */
-    public function getProduit(): Collection
-    {
-        return $this->Produit;
-    }
-
-    public function addProduit(Produit $produit): self
-    {
-        if (!$this->Produit->contains($produit)) {
-            $this->Produit[] = $produit;
-        }
-
-        return $this;
-    }
-
-    public function removeProduit(Produit $produit): self
-    {
-        if ($this->Produit->contains($produit)) {
-            $this->Produit->removeElement($produit);
-        }
 
         return $this;
     }
@@ -127,6 +107,37 @@ class Commande
     public function setCommandeType(int $commandeType): self
     {
         $this->commandeType = $commandeType;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CommandeArticles[]
+     */
+    public function getCommandeArticles(): Collection
+    {
+        return $this->commandeArticles;
+    }
+
+    public function addCommandeArticle(CommandeArticles $commandeArticle): self
+    {
+        if (!$this->commandeArticles->contains($commandeArticle)) {
+            $this->commandeArticles[] = $commandeArticle;
+            $commandeArticle->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandeArticle(CommandeArticles $commandeArticle): self
+    {
+        if ($this->commandeArticles->contains($commandeArticle)) {
+            $this->commandeArticles->removeElement($commandeArticle);
+            // set the owning side to null (unless already changed)
+            if ($commandeArticle->getCommande() === $this) {
+                $commandeArticle->setCommande(null);
+            }
+        }
 
         return $this;
     }
