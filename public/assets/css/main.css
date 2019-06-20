@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'open_sansregular';
+  src: url('opensans-regular-webfont.woff2') format('woff2'), url('opensans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 main h1,
 main h2,
 main h3,
@@ -8,17 +14,21 @@ main .h2,
 main .h3,
 main .h4,
 main .h5 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'open_sansregular';
   letter-spacing: 0.5rem;
   display: block;
 }
 main h1,
 main .h1 {
-  font-size: 3.4rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  color: #4D4D4D;
 }
 main h2,
 main .h2 {
   font-size: 3rem;
+  line-height: 3.6rem;
+  color: #3C3C3B;
 }
 main h3,
 main .h3 {
@@ -26,7 +36,9 @@ main .h3 {
 }
 main h4,
 main .h4 {
-  font-size: 2rem;
+  font-size: 3rem;
+  line-height: 4.2rem;
+  color: #164194;
 }
 main h5,
 main .h5 {
