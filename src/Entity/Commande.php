@@ -40,15 +40,15 @@ class Commande
     private $commandeType;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\CommandeArticles", mappedBy="commande")
+     * @ORM\Column(type="array", nullable=true)
      */
-    private $commandeArticles;
+    private $articles = [];
+
 
     public function __construct()
     {
         $this->Produit = new ArrayCollection();
         $this->commandeAdresses = new ArrayCollection();
-        $this->commandeArticles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -111,34 +111,16 @@ class Commande
         return $this;
     }
 
-    /**
-     * @return Collection|CommandeArticles[]
-     */
-    public function getCommandeArticles(): Collection
+    public function getArticles(): ?array
     {
-        return $this->commandeArticles;
+        return $this->articles;
     }
 
-    public function addCommandeArticle(CommandeArticles $commandeArticle): self
+    public function setArticles(?array $articles): self
     {
-        if (!$this->commandeArticles->contains($commandeArticle)) {
-            $this->commandeArticles[] = $commandeArticle;
-            $commandeArticle->setCommande($this);
-        }
+        $this->articles = $articles;
 
         return $this;
     }
 
-    public function removeCommandeArticle(CommandeArticles $commandeArticle): self
-    {
-        if ($this->commandeArticles->contains($commandeArticle)) {
-            $this->commandeArticles->removeElement($commandeArticle);
-            // set the owning side to null (unless already changed)
-            if ($commandeArticle->getCommande() === $this) {
-                $commandeArticle->setCommande(null);
-            }
-        }
-
-        return $this;
-    }
 }
