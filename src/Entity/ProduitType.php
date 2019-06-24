@@ -28,6 +28,21 @@ class ProduitType
      */
     private $produits;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $composition;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $poids;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -83,5 +98,41 @@ class ProduitType
     public function __toString()
     {
         return $this->getLibelle();
+    }
+
+    public function getComposition(): ?string
+    {
+        return $this->composition;
+    }
+
+    public function setComposition(?string $composition): self
+    {
+        $this->composition = $composition;
+
+        return $this;
+    }
+
+    public function getPoids(): ?string
+    {
+        return $this->poids;
+    }
+
+    public function setPoids(?string $poids): self
+    {
+        $this->poids = $poids;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 }

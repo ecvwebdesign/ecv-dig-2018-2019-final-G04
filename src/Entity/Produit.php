@@ -61,6 +61,11 @@ class Produit
      */
     private $couleur;
 
+    /**
+     * @ORM\Column(type="decimal", precision=10, scale=2, nullable=true)
+     */
+    private $prix_promo;
+
 
     public function __construct()
     {
@@ -180,6 +185,18 @@ class Produit
     public function setCouleur(?Couleurs $couleur): self
     {
         $this->couleur = $couleur;
+
+        return $this;
+    }
+
+    public function getPrixPromo()
+    {
+        return $this->prix_promo;
+    }
+
+    public function setPrixPromo($prix_promo): self
+    {
+        $this->prix_promo = $prix_promo;
 
         return $this;
     }
