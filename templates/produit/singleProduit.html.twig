@@ -1,28 +1,157 @@
 {% extends 'base.html.twig' %}
+        {% block stylesheets %}
+        {% endblock %}
 
 {% block title %}Produit{% endblock %}
 
 {% block body %}
+<article>
+        <section>
+                <div>
+                        <p>64,99€</p>
+                        <p>34,99 €</p>
+                </div>
+                <div>
+                        <a href="">
+                                <p>Voir les disponibilités</p>
+                        </a>
+                </div>
+        </section>
+        <div>
+                <img src="" alt="">
+                <p>-47 %</p>
+        </div>
+        <section>
+                <section>
+                        <div>
+                                <p>Couleurs disponibles</p>
+                                <div>
+                                        <div>couleur 1</div>
+                                        <div>couleur 2</div>
+                                </div>
+                        </div>
+                        <h1>Sneakers homme Tanjun Se</h1>
+                        <h3>NIKE</h3>
+                        <div>
+                                <div>
+                                        <img src="" alt="">
+                                        <img src="" alt="">
+                                        <img src="" alt="">
+                                        <img src="" alt="">
+                                        <img src="" alt="">
+                                </div>
+                                <p>10 avis</p>
+                        </div>
+                        <p>« Tanjun » signifie « simplicité » en japonais et la chaussure en est la parfaite illustration. Cette édition spéciale au design moderne à la fois pratique et confortable est ornée d'un logo Swoosh métallique pour un style sophistiqué.</p>
+                </section>
+                <section>
+                        <h2>CARACTERISTIQUES</h2>
+                        <table>
+                                <tr>
+                                        <th>Composition</th>
+                                        <th>Coton</th>
+                                </tr>
+                                <tr>
+                                        <th>Couleurs</th>
+                                        <th>Gris anthracite, bordeaux</th>
+                                </tr>
+                                <tr>
+                                        <th>Poids</th>
+                                        <th>300 grammes</th>
+                                </tr>
+                                <tr>
+                                        <th>...</th>
+                                        <th>...</th>
+                                </tr>
+                        </table>
+                        <a href="">Plus de détails</a>
+                </section>
+                <section>
+                        <h2>Avis de nos clients</h2>
+                        <div>
+                                <div>
+                                        <span>3,9/5</span>
+                                        <div>
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                        </div>
+                                        <p>10 avis</p>
+                                </div>
+                                <div>
+                                        <p>80% des clients recommandent ce produit</p>
+                                </div>
+                        </div>
+                        <article>
+                                <h4>J'ai reçu une autre couleur</h4>
+                                <div>
+                                        <div>
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                        </div>
+                                        <span>Kamel H. - le 22/06/19</span>
+                                </div>
+                                <div>
+                                        <img src="" alt="">
+                                        <p>Je recommande ce produit</p>
+                                </div>
+                                <p></p>
+                        </article>
+                        <article>
+                                <h4>J'ai reçu une autre couleur</h4>
+                                <div>
+                                        <div>
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                                <img src="" alt="">
+                                        </div>
+                                        <span>Kamel H. - le 22/06/19</span>
+                                </div>
+                                <div>
+                                        <img src="" alt="">
+                                        <p>Je recommande ce produit</p>
+                                </div>
+                                <p></p>
+                        </article>
+                        <a href="">Plus de détails</a>
+                </section>
+                <section>
 
-        <h3>{{ produit.libelle }}</h3>
-        <img src="{{ produit.image }}" alt="">
-        <p>{{ produit.prix }} €</p>
-        <p>{{ produit.quantite }} restant</p>
-        <p>{{ produit.taille }}</p>
-        <form action="{{  path("ajoutPanier", {"id": produit.id}) }}">
-                <input type="submit" value="Ajouter au panier">
-        </form>
-        <h2>Produits similaires</h2>
-        {% for autreProduit in produitsSimilaires %}
-                {% if autreProduit.id != produit.id %}
-                        <h3>{{ autreProduit.libelle }}</h3>
-                        <img src="{{ autreProduit.image }}" alt="">
-                        <p>{{ autreProduit.prix }} €</p>
-                        <p>{{ autreProduit.quantite }} restant</p>
-                        <p>{{ autreProduit.taille }}</p>
-                        <form action="{{  path("singleProduit", {"id": autreProduit.id}) }}">
-                                <input type="submit" value="Voir plus">
-                        </form>
-                {% endif %}
-        {% endfor %}
-{% endblock %}
+                </section>
+                <section>
+                        <div>
+                                <img src="" alt="">
+                                <p>s'engage</p>
+                        </div>
+                        <div>
+                                <div>
+                                        <img src="" alt="">
+                                        <span>Livraison en 48h</span>
+                                        <p>A domicile et en points relais</p>
+                                </div>
+                                <div>
+                                        <img src="" alt="">
+                                        <span>Retrait gratuit en magasin</span>
+                                        <p>Votre commande est préparée sous 4 heures en magasin</p>
+                                </div>
+                                <div>
+                                        <img src="" alt="">
+                                        <span>Satisfait ou remboursé</span>
+                                        <p>Vous avez 15 jours pour changer d'avis</p>
+                                </div>
+                                <div>
+                                        <img src="" alt="">
+                                        <span>Service client</span>
+                                        <p>Une réponse rapide et personnalisée</p>
+                                </div>
+                        </div>
+                </section>
+        </section>
+</article>
