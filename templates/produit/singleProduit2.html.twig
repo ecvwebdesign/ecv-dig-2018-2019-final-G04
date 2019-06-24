@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
         {% block stylesheets %}
         {% endblock %}
-
 {% block title %}Produit{% endblock %}
 
 {% block body %}
 <article>
         <section>
                 <div>
-                        <p>64,99€</p>
-                        <p>34,99 €</p>
+                        <p>{{ produit.prix }} €</p>
+                        <p>{{ produit.prixPromo }} €</p>
                 </div>
                 <div>
                         <a href="">
@@ -19,19 +18,20 @@
         </section>
         <div>
                 <img src="" alt="">
-                <p>-47 %</p>
+                <p>- {{ reduction }} %</p>
         </div>
         <section>
                 <section>
                         <div>
                                 <p>Couleurs disponibles</p>
                                 <div>
-                                        <div>couleur 1</div>
-                                        <div>couleur 2</div>
+                                        {% for sameProduit in allProduitType %}
+                                                <a href="{{  path("singleProduit", {"id": sameProduit.id}) }}">couleur {{ loop.index }}</a>
+                                        {% endfor %}
                                 </div>
                         </div>
-                        <h1>Sneakers homme Tanjun Se</h1>
-                        <h3>NIKE</h3>
+                        <h1>{{ produit.libelle }}</h1>
+                        <h3>{{ produitType.marque }}</h3>
                         <div>
                                 <div>
                                         <img src="" alt="">
@@ -42,23 +42,31 @@
                                 </div>
                                 <p>10 avis</p>
                         </div>
-                        <p>« Tanjun » signifie « simplicité » en japonais et la chaussure en est la parfaite illustration. Cette édition spéciale au design moderne à la fois pratique et confortable est ornée d'un logo Swoosh métallique pour un style sophistiqué.</p>
+                        <p>{{ produit.libelle }}</p>
                 </section>
                 <section>
                         <h2>CARACTERISTIQUES</h2>
                         <table>
-                                <tr>
-                                        <th>Composition</th>
-                                        <th>Coton</th>
-                                </tr>
+                                {% if produitType.composition %}
+                                        <tr>
+                                                <th>Composition</th>
+                                                <th>{{ produitType.composition }}</th>
+                                        </tr>
+                                {% endif %}
                                 <tr>
                                         <th>Couleurs</th>
-                                        <th>Gris anthracite, bordeaux</th>
+                                        <th>
+                                        {% for sameProduit in allProduitType %}
+                                               {{ sameProduit.couleur }}
+                                        {% endfor %}
+                                        </th>
                                 </tr>
-                                <tr>
-                                        <th>Poids</th>
-                                        <th>300 grammes</th>
-                                </tr>
+                                {% if produitType.poids %}
+                                        <tr>
+                                                <th>Poids</th>
+                                                <th>{{ produitType.poids }}</th>
+                                        </tr>
+                                {% endif %}
                                 <tr>
                                         <th>...</th>
                                         <th>...</th>
