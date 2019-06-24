@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Produit;
+use App\Entity\ProduitType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,13 +25,17 @@ class ProduitsController extends AbstractController
      * @Route("/produit/{id}", name="singleProduit")
      */
     public function singleProduit($id, EntityManagerInterface $manager){
+
         $produit = $manager->getRepository(Produit::class)->find($id);
         $repository = $this->getDoctrine()->getRepository(Produit::class);
-        $produitsSimilaires = $repository->findBy([
-                'produitType' => $produit->getProduitType()->getId()
-            ]
-        );
-        return $this->render('produit/singleProduit.html.twig', ["produit" => $produit, "produitsSimilaires" => $produitsSimilaires]);
+        $produitTypeId = $produit->getProduitType()->getId();
+        $produitType = $manager->getRepository(ProduitType::class)->find($produitTypeId);
+        $allProduitType = $manager->getRepository(Produit::class)->findBy([
+            'produitType' => $produitTypeId
+        ]);
+        $oldNumber = $produit->getPrix();
+        $newNumber = $produit->getPrixPromo();
+        $reduction = round($oldNumber - $newNumber);
+        return $this->render('produit/singleProduit2.html.twig', ["produit" => $produit, "produitType" => $produitType, "allProduitType" => $allProduitType, "reduction" => $reduction]);
     }
 }
-
