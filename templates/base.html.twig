@@ -7,18 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     {% endblock %}
 </head>
 <body>
 {% block header %}
     <header>
-        <a href="{{  path("produits") }}">Produits</a>
-        <a href="{{  path("panier") }}">Panier</a>
+        <div>
+            <img src="{{ asset('assets/images/logo-intersport.png') }}" alt="Logo Intersport">
+        </div>
+        <div>
+            <ul>
+                <li><a href="#"><img src="{{ asset('assets/images/menu-loupe.png') }}" alt="Icon de recherche"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/images/menu_fav.png') }}" alt="Icon liste de favoris"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/images/menu_bag.png') }}" alt="Icon panier"></a></li>
+            </ul>
+            <nav>
+                <button aria-pressed="false" type="button" class="menu-burger" id="menu-button" tabindex="1"><span
+                            class="burger"></span><span class="menu-title">Menu</span></button>
+                <ul>
+                    <li><a href="#">Nouveautés</a></li>
+                    <li><a href="#">Sports</a></li>
+                    <li><a href="#">Vêtements</a></li>
+                    <li><a href="#">Chaussures</a></li>
+                    <li><a href="#">Accessoires</a></li>
+                    <li><a href="#">Promotions</a></li>
+                    <li><a href="#">Trouver un magasin</a></li>
+                </ul>
+{#                <ul>#}
+{#                    <li><a href="#">Mon compte</a></li>#}
+{#                    <li><a href="#">Mon magasin</a></li>#}
+{#                </ul>#}
+            </nav>
+        </div>
     </header>
+
+
+{#    <header>#}
+{#        <a href="{{  path("produits") }}">Produits</a>#}
+{#        <a href="{{  path("panier") }}">Panier</a>#}
+{#    </header>#}
 {% endblock %}
 {% block body %}
 {% endblock %}
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
+{% endblock %}
 </body>
 </html>
