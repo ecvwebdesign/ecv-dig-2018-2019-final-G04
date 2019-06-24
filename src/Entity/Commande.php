@@ -39,6 +39,12 @@ class Commande
      */
     private $commandeType;
 
+    /**
+     * @ORM\Column(type="array", nullable=true)
+     */
+    private $articles = [];
+
+
     public function __construct()
     {
         $this->Produit = new ArrayCollection();
@@ -58,32 +64,6 @@ class Commande
     public function setUser(?User $user): self
     {
         $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Produit[]
-     */
-    public function getProduit(): Collection
-    {
-        return $this->Produit;
-    }
-
-    public function addProduit(Produit $produit): self
-    {
-        if (!$this->Produit->contains($produit)) {
-            $this->Produit[] = $produit;
-        }
-
-        return $this;
-    }
-
-    public function removeProduit(Produit $produit): self
-    {
-        if ($this->Produit->contains($produit)) {
-            $this->Produit->removeElement($produit);
-        }
 
         return $this;
     }
@@ -130,4 +110,17 @@ class Commande
 
         return $this;
     }
+
+    public function getArticles(): ?array
+    {
+        return $this->articles;
+    }
+
+    public function setArticles(?array $articles): self
+    {
+        $this->articles = $articles;
+
+        return $this;
+    }
+
 }

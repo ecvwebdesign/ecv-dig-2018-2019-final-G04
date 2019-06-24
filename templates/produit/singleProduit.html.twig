@@ -9,7 +9,7 @@
         <p>{{ produit.prix }} €</p>
         <p>{{ produit.quantite }} restant</p>
         <p>{{ produit.taille }}</p>
-        <form action="{{  path("panier", {"id": produit.id}) }}">
+        <form action="{{  path("ajoutPanier", {"id": produit.id}) }}">
                 <input type="submit" value="Ajouter au panier">
         </form>
         <h2>Produits similaires</h2>

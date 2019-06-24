@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProduitsController extends AbstractController
 {
     /**
-     * @Route("/produit", name="produit")
+     * @Route("/produits", name="produits")
      */
     public function index(EntityManagerInterface $manager)
     {
@@ -27,7 +27,7 @@ class ProduitsController extends AbstractController
         $produit = $manager->getRepository(Produit::class)->find($id);
         $repository = $this->getDoctrine()->getRepository(Produit::class);
         $produitsSimilaires = $repository->findBy([
-                'libelle' => $produit->libelle
+                'produitType' => $produit->getProduitType()->getId()
             ]
         );
         return $this->render('produit/singleProduit.html.twig', ["produit" => $produit, "produitsSimilaires" => $produitsSimilaires]);

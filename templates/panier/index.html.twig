@@ -4,14 +4,16 @@
 
 {% block body %}
 
-    {% for autreProduit in bjr %}
-        <h3>{{ autreProduit|first.libelle }}</h3>
-        <img src="{{ autreProduit|first.image }}" alt="">
-        <p>{{ autreProduit|first.prix }} €</p>
-        <p>{{ autreProduit|first.quantite }} restant</p>
-        <p>{{ autreProduit|first.taille }}</p>
-        <form action="{{  path("singleProduit", {"id": autreProduit|fir.id}) }}">
-            <input type="submit" value="Voir plus">
-        </form>
+    {% for autreProduit in userProduits %}
+        <article style="display:flex; flex-wrap:wrap;">
+            <h3>{{ autreProduit|first.libelle }}</h3>
+            <img style="width:50px;height:50px;" src="{{ autreProduit|first.image }}" alt="">
+            <p>{{ autreProduit|first.prix }} €</p>
+            <p>{{ autreProduit|first.quantite }} restant</p>
+            <p>{{ autreProduit|first.taille }}</p>
+            <form action="{{  path("singleProduit", {"id": autreProduit|first.id}) }}">
+                <input type="submit" value="Voir plus">
+            </form>
+        </article>
     {% endfor %}
 {% endblock %}

@@ -17,18 +17,20 @@ class PanierController extends AbstractController
     public function index(Security $security, EntityManagerInterface $manager)
     {
         $user = $security->getUser();
-        $commande = $manager->getRepository(Commande::class)->findBy([
-                'user' => $user
-            ]
+        $commandes = $manager->getRepository(Commande::class)->findBy(
+            ['user' => $user],
+            ['id' => 'DESC'],
+            ['setMAxResults' => 1]
         );
-        $bjr = array();
-        foreach($commande as $test){
-            $bjr[] = $test->getProduit()->getValues();;
+        $lastCommande = $commandes[0];
+        $userProduits = array();
+        foreach($lastCommande->getArticles()[0]["produit"] as $articles){
+            dd($articles);
+            $userProduits[] = $articles;
         }
-
+        dd($userProduits);
         return $this->render('panier/index.html.twig', [
-            'commande' => $commande,
-            'bjr' => $bjr,
+            'userProduits' => $userProduits,
         ]);
     }
     /**
@@ -38,14 +40,25 @@ class PanierController extends AbstractController
     {
         $user = $security->getUser();
         $produit = $manager->getRepository(Produit::class)->find($id);
-        $commande = new Commande();
-        $commande->setCommandeType(1);
-        $commande->setUser($user);
-        $commande->addProduit($produit);
-        $manager->persist($commande);
+        $commandes = $manager->getRepository(Commande::class)->findBy(
+            ['user' => $user],
+            ['id' => 'DESC'],
+            ['setMAxResults' => 1]
+        );
+        $lastCommande = $commandes[0];
+        $lastCommandeId = $commandes[0]->getId();
+        $lastCommande->getArticles();
+        $lastCommande->setArticles(array(array("quantite" => 5, "produit" => $produit)));
+        foreach($lastCommande->getArticles() as $article){
+        }
+        $manager->persist($lastCommande);
         $manager->flush();
+        dd($lastCommande);
         return $this->render('panier/index.html.twig', [
-            'controller_name' => 'PanierController',
+
         ]);
+//        return $this->redirectToRoute('homepage', [
+//            'controller_name' => 'PanierController'
+//        ]);
     }
 }
