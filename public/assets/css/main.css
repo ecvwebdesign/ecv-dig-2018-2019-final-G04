@@ -47,6 +47,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   color: #ffffff;
+  background-color: grey !important;
 }
 @media only screen and (min-width: 768px) {
   body {
