@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
@@ -13,7 +14,7 @@
 </head>
 <body>
 {% block header %}
-    <header>
+    <header id="header">
         <div>
             <img src="{{ asset('assets/images/logo-intersport.png') }}" alt="Logo Intersport">
         </div>
@@ -53,6 +54,7 @@
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
     <script>
         $(document).ready(function(){

@@ -12,5 +12,19 @@ jQuery(document).ready(function () {
         e.preventDefault();
     });
 
+    $('#slider-singleproduit').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+    });
+
+    $('#more-article').slick({
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2,
+        arrows: false,
+        dots: false,
+    });
 
 });
