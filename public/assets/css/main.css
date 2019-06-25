@@ -10,16 +10,16 @@
   font-weight: normal;
   font-style: normal;
 }
-header {
+#header {
   padding: 1.5rem 2.5rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
 }
-header > div {
+#header > div {
   flex-basis: 50%;
 }
-header > div ul {
+#header > div ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -27,19 +27,19 @@ header > div ul {
   flex-flow: row nowrap;
   align-items: center;
 }
-header > div ul li {
+#header > div ul li {
   padding: 0 1.5rem;
 }
-header > div .menu-burger {
+#header > div .menu-burger {
   display: block;
   cursor: pointer;
   border: none;
   background-color: #ffffff;
 }
-header > div .menu-burger:focus {
+#header > div .menu-burger:focus {
   outline: none;
 }
-header > div .menu-burger span.burger {
+#header > div .menu-burger span.burger {
   display: inline-block;
   width: 2.5rem;
   height: 0.2rem;
@@ -48,7 +48,7 @@ header > div .menu-burger span.burger {
   position: relative;
   vertical-align: middle;
 }
-header > div .menu-burger span.burger::before {
+#header > div .menu-burger span.burger::before {
   content: '';
   background-color: #242B49;
   height: 0.2rem;
@@ -60,7 +60,7 @@ header > div .menu-burger span.burger::before {
   transition-timing-function: ease;
   top: -0.6rem;
 }
-header > div .menu-burger span.burger::after {
+#header > div .menu-burger span.burger::after {
   top: 0.6rem;
   background-color: #242B49;
   content: '';
@@ -72,26 +72,26 @@ header > div .menu-burger span.burger::after {
   transition-property: all;
   transition-timing-function: ease;
 }
-header > div .menu-burger span.menu-title {
+#header > div .menu-burger span.menu-title {
   font-size: 0;
 }
-header > div .menu-burger.active span.burger {
+#header > div .menu-burger.active span.burger {
   background-color: transparent;
 }
-header > div .menu-burger.active span.burger::before {
+#header > div .menu-burger.active span.burger::before {
   top: 0;
   transform: rotate(-45deg);
 }
-header > div .menu-burger.active span.burger::after {
+#header > div .menu-burger.active span.burger::after {
   top: 0;
   transform: rotate(45deg);
 }
-header > div nav ul {
+#header > div nav ul {
   display: none;
   background-color: #ffffff;
   z-index: 1;
 }
-header > div nav.active ul:first-of-type {
+#header > div nav.active ul:first-of-type {
   display: block;
   position: absolute;
   width: 100%;
@@ -101,12 +101,12 @@ header > div nav.active ul:first-of-type {
   padding: 2.5rem 0;
   padding-left: 2.5rem;
 }
-header > div nav.active ul:first-of-type li {
+#header > div nav.active ul:first-of-type li {
   padding: 1.5rem 0;
   position: relative;
   width: calc(100% - 2.5rem);
 }
-header > div nav.active ul:first-of-type li::after {
+#header > div nav.active ul:first-of-type li::after {
   content: '\f054';
   font-family: 'FontAwesome';
   position: absolute;
@@ -115,13 +115,13 @@ header > div nav.active ul:first-of-type li::after {
   font-size: 1.6rem;
   color: #242b49;
 }
-header > div nav.active ul:first-of-type li a {
+#header > div nav.active ul:first-of-type li a {
   text-decoration: none;
   text-transform: uppercase;
   display: inline-block;
   color: #242b49;
 }
-header > div:last-of-type {
+#header > div:last-of-type {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -137,7 +137,6 @@ main .h3,
 main .h4,
 main .h5 {
   font-family: Helvetica, Arial, sans-serif;
-  letter-spacing: 0.5rem;
   display: block;
 }
 main h1,
@@ -146,7 +145,7 @@ main .h1 {
 }
 main h2,
 main .h2 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 main h3,
 main .h3 {
@@ -164,6 +163,391 @@ main a,
 main p,
 main span {
   font-size: 1.6rem;
+}
+main a {
+  cursor: pointer;
+  display: block;
+}
+main .btn {
+  display: inline-block;
+  cursor: pointer;
+}
+main .btn-fondbleu {
+  background-color: #164194;
+  padding: 1rem 3rem;
+  border: none;
+  color: #ffffff;
+}
+main .btn-detail {
+  font-family: 'open_sansregular';
+  font-size: 1.2rem;
+  color: #292F4E;
+  margin: 3rem 0;
+  display: block;
+  text-align: right;
+}
+main .reduction {
+  width: 55px;
+  height: 30px;
+  background-color: #E30613;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+main .reduction .btn-reduction {
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-family: 'open_sansregular';
+}
+main .slick-slider ul.slick-dots {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+main .slick-slider ul.slick-dots li {
+  display: inline-block;
+}
+main .slick-slider ul.slick-dots li::before {
+  content: '';
+  display: inline-block;
+  width: 3rem;
+  height: 4px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  background-color: rgba(151, 151, 151, 0.3);
+  margin: 0 0.5rem;
+}
+main .slick-slider ul.slick-dots li button {
+  border: none;
+  -webkit-appearance: none;
+  font-size: 0;
+  background-color: transparent;
+  color: #ffffff;
+  position: absolute;
+}
+main .slick-slider ul.slick-dots li.slick-active::before {
+  background-color: #979797;
+}
+main.singleproduit > article > header #slider-singleproduit img {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+main.singleproduit > article > header #slider-singleproduit .slick-slide {
+  position: relative;
+}
+main.singleproduit > article > section {
+  padding: 2.5rem;
+}
+main.singleproduit > article > section > header {
+  display: flex;
+  flex-direction: column;
+}
+main.singleproduit > article > section > header .couleur {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.singleproduit > article > section > header .couleur > p {
+  font-size: 1.2rem;
+  font-family: 'open_sansregular';
+  color: #A0A0A0;
+  margin-right: 1.5rem;
+}
+main.singleproduit > article > section > header .couleur > div {
+  display: flex;
+  flex-flow: row nowrap;
+}
+main.singleproduit > article > section > header .couleur > div > div {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+main.singleproduit > article > section > header .couleur > div > div:first-of-type {
+  background-color: #2B2E35;
+  margin-right: 0.5rem;
+}
+main.singleproduit > article > section > header .couleur > div > div:last-of-type {
+  background-color: #4c3a41;
+  margin-left: 0.5rem;
+}
+main.singleproduit > article > section > header h1 {
+  font-size: 1.8rem;
+  font-family: 'open_sansregular';
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0;
+  position: relative;
+}
+main.singleproduit > article > section > header h1::after {
+  content: '\f08a';
+  font-family: FontAwesome;
+  color: #FF8080;
+  font-size: 2rem;
+  position: absolute;
+  right: 0;
+}
+main.singleproduit > article > section > header h3 {
+  font-size: 1.3rem;
+  font-family: 'open_sansregular';
+  text-transform: uppercase;
+  color: #A0A0A0;
+}
+main.singleproduit > article > section > header .etoile {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.singleproduit > article > section > header .etoile > div {
+  display: flex;
+  flex-flow: row nowrap;
+}
+main.singleproduit > article > section > header .etoile p {
+  margin: 0;
+  font-family: 'open_sansregular';
+  font-size: 13px;
+  color: #164194;
+  margin-left: 1rem;
+}
+main.singleproduit > article > section > header .description-produit {
+  font-size: 14px;
+  color: #000000;
+  font-family: 'open_sansregular';
+}
+main.singleproduit > article > section > section > section.caracteristique h2 {
+  text-transform: uppercase;
+  color: #164194;
+  font-weight: lighter;
+}
+main.singleproduit > article > section > section > section.caracteristique table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main.singleproduit > article > section > section > section.caracteristique table tr th:first-of-type {
+  font-weight: bold;
+}
+main.singleproduit > article > section > section > section.caracteristique table tr th {
+  color: #000000;
+  font-weight: lighter;
+  text-align: left;
+  padding: 0.8rem 0;
+  padding-left: 0.5rem;
+}
+main.singleproduit > article > section > section > section.caracteristique table tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+main.singleproduit > article > section > section > section.avis h2 {
+  text-transform: uppercase;
+  color: #164194;
+  font-weight: lighter;
+}
+main.singleproduit > article > section > section > section.avis > div {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f3f3f3;
+  padding: 2rem;
+  align-items: center;
+}
+main.singleproduit > article > section > section > section.avis > div > div {
+  text-align: center;
+}
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type {
+  flex-basis: 40%;
+  position: relative;
+}
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #ededed;
+}
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type span,
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type p {
+  color: #164194;
+  font-family: 'open_sansregular';
+}
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type span {
+  font-size: 2rem;
+  font-weight: bold;
+}
+main.singleproduit > article > section > section > section.avis > div > div:first-of-type p {
+  font-weight: bolder;
+  margin: 0;
+}
+main.singleproduit > article > section > section > section.avis > div > div:last-of-type {
+  flex-basis: 60%;
+}
+main.singleproduit > article > section > section > section.avis > div > div:last-of-type p {
+  color: #13932E;
+  font-family: 'open_sansregular';
+  font-size: 1.4rem;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 2.5rem;
+}
+main.singleproduit > article > section > section > section.avis > div > div:last-of-type p span {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+main.singleproduit > article > section > section > section.avis > article h4 {
+  font-family: 'open_sansregular';
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 0;
+}
+main.singleproduit > article > section > section > section.avis > article > div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.singleproduit > article > section > section > section.avis > article > div:first-of-type {
+  margin: 0.5rem 0;
+}
+main.singleproduit > article > section > section > section.avis > article > div > span {
+  font-family: 'open_sansregular';
+  font-size: 1.2rem;
+  color: #A0A0A0;
+  margin-left: 1.5rem;
+}
+main.singleproduit > article > section > section > section.avis > article > div > p {
+  font-size: 1.3rem;
+  font-family: 'open_sansregular';
+  font-weight: bolder;
+  color: #13932E;
+  margin: 0;
+}
+main.singleproduit > article > section > section > section.avis > article > div > p::before {
+  content: '\f00c';
+  display: inline-block;
+  font-family: FontAwesome;
+  margin-right: 0.5rem;
+}
+main.singleproduit > article > section > section > section.avis > article > p {
+  font-size: 1.3rem;
+  font-family: 'open_sansregular';
+  color: #000000;
+}
+main.singleproduit > article > section > section > section.more-article h2 {
+  text-transform: uppercase;
+  color: #164194;
+  font-weight: lighter;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide {
+  padding: 1.5rem;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide img {
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide h5 {
+  font-family: 'open_sansregular';
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000000;
+  margin-bottom: 0;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide h6 {
+  font-family: 'open_sansregular';
+  font-size: 1.1rem;
+  color: #A8A8A7;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div {
+  color: #000000;
+  font-family: 'open_sansregular';
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div:first-of-type {
+  flex: 1;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div:first-of-type p {
+  display: inline-block;
+  position: relative;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div:first-of-type p::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #E60000;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div:last-of-type p {
+  color: #E60000;
+  font-weight: bold;
+}
+main.singleproduit > article > section > section > section.more-article #more-article .slick-slide > div > div p {
+  font-size: 1.1rem;
+}
+main.singleproduit > article > footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  height: 45px;
+}
+main.singleproduit > article > footer > div:last-of-type {
+  width: 70%;
+}
+main.singleproduit > article > footer > div:last-of-type a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  height: 45px;
+  padding-top: 1.5rem;
+}
+main.singleproduit > article > footer > div:first-of-type {
+  background-color: #f3f3f3;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main.singleproduit > article > footer > div:first-of-type > p {
+  margin: 0;
+}
+main.singleproduit > article > footer > div:first-of-type > p:first-of-type {
+  display: inline-block;
+  position: relative;
+  color: #000000;
+}
+main.singleproduit > article > footer > div:first-of-type > p:first-of-type::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #E60000;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+}
+main.singleproduit > article > footer > div:first-of-type > p:last-of-type {
+  color: #E60000;
+  font-weight: bold;
 }
 html {
   height: 100%;
@@ -202,9 +586,5 @@ body .txt-left {
 }
 body .d-flex {
   display: flex;
-}
-body a {
-  cursor: pointer;
-  display: block;
 }
 /*# sourceMappingURL=main.css.map */

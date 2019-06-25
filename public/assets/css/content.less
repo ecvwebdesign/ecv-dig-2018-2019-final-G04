@@ -1,7 +1,6 @@
 main {
     h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
         font-family: @family-default;
-        letter-spacing: 0.5rem;
         display: block;
     }
 
@@ -10,7 +9,7 @@ main {
     }
 
     h2, .h2 {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     h3, .h3 {
@@ -28,5 +27,502 @@ main {
     a, p, span {
         //font-family: @family-raleway;
         font-size: 1.6rem;
+    }
+
+    a {
+        cursor: pointer;
+        display: block;
+    }
+
+    .btn {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .btn-fondbleu {
+        background-color: #164194;
+        padding: 1rem 3rem;
+        border: none;
+        color: @blanc;
+    }
+
+    .btn-detail {
+        font-family: @family-open;
+        font-size: 1.2rem;
+        color: #292F4E;
+        margin: 3rem 0;
+        display: block;
+        text-align: right;
+    }
+
+    .reduction {
+        width: 55px;
+        height: 30px;
+        background-color: #E30613;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        .btn-reduction {
+            font-size: 1.3rem;
+            color: @blanc;
+            font-family: @family-open;
+        }
+    }
+
+    a:not(.btn) {
+
+    }
+
+    .slick-slider {
+        button {
+            &.slick-prev {
+
+            }
+
+            &.slick-next {
+
+            }
+        }
+
+        ul.slick-dots {
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            bottom: 3rem;
+            left: 0;
+            right: 0;
+            text-align: center;
+
+            li {
+                display: inline-block;
+
+                &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 3rem;
+                    height: 4px;
+                    -webkit-border-radius: 60px;
+                    -moz-border-radius: 60px;
+                    border-radius: 60px;
+                    background-color: rgba(151, 151, 151, 0.3);
+                    margin: 0 0.5rem;
+                }
+
+                button {
+                    border: none;
+                    -webkit-appearance: none;
+                    font-size: 0;
+                    background-color: transparent;
+                    color: @blanc;
+                    position: absolute;
+                }
+
+                &.slick-active {
+                    &::before {
+                        background-color: #979797;
+                    }
+                }
+            }
+        }
+    }
+
+    &.singleproduit {
+        > article {
+            > header {
+                #slider-singleproduit {
+                    img {
+                        width: 100%;
+                        height: auto;
+                        overflow: hidden;
+                    }
+
+                    .slick-slide {
+                        position: relative;
+                    }
+                }
+            }
+
+            > section {
+                padding: 2.5rem;
+
+                > header {
+                    display: flex;
+                    flex-direction: column;
+
+                    .couleur {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+
+                        > p {
+                            font-size: 1.2rem;
+                            font-family: @family-open;
+                            color: #A0A0A0;
+                            margin-right: 1.5rem;
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+
+                            > div {
+                                width: 30px;
+                                height: 30px;
+                                -webkit-border-radius: 3px;
+                                -moz-border-radius: 3px;
+                                border-radius: 3px;
+                            }
+
+                            > div:first-of-type {
+                                background-color: #2B2E35;
+                                margin-right: 0.5rem;
+                            }
+
+                            > div:last-of-type {
+                                background-color: #4c3a41;
+                                margin-left: 0.5rem;
+                            }
+                        }
+                    }
+
+                    h1 {
+                        font-size: 1.8rem;
+                        font-family: @family-open;
+                        font-weight: bold;
+                        color: @noir;
+                        margin-bottom: 0;
+                        position: relative;
+
+                        &::after {
+                            content: '\f08a';
+                            font-family: FontAwesome;
+                            color: #FF8080;
+                            font-size: 2rem;
+                            position: absolute;
+                            right: 0;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 1.3rem;
+                        font-family: @family-open;
+                        text-transform: uppercase;
+                        color: #A0A0A0;
+                    }
+
+                    .etoile {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+                        }
+
+                        p {
+                            margin: 0;
+                            font-family: @family-open;
+                            font-size: 13px;
+                            color: #164194;
+                            margin-left: 1rem;
+                        }
+                    }
+
+                    .description-produit {
+                        font-size: 14px;
+                        color: @noir;
+                        font-family: @family-open;
+                    }
+                }
+
+                > section {
+                    > section.caracteristique {
+                        h2 {
+                            text-transform: uppercase;
+                            color: #164194;
+                            font-weight: lighter;
+                        }
+
+                        table {
+                            width: 100%;
+                            border-collapse: collapse;
+
+                            tr {
+                                th:first-of-type {
+                                    font-weight: bold;
+                                }
+
+                                th {
+                                    color: @noir;
+                                    font-weight: lighter;
+                                    text-align: left;
+                                    padding: 0.8rem 0;
+                                    padding-left: 0.5rem;
+                                }
+
+                                &:nth-child(even) {
+                                    background-color: #f3f3f3;
+                                }
+                            }
+                        }
+                    }
+
+                    > section.avis {
+                        h2 {
+                            text-transform: uppercase;
+                            color: #164194;
+                            font-weight: lighter;
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            background-color: #f3f3f3;
+                            padding: 2rem;
+                            align-items: center;
+
+                            > div {
+                                text-align: center;
+
+                                &:first-of-type {
+                                    flex-basis: 40%;
+                                    position: relative;
+
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                        height: 100%;
+                                        width: 2px;
+                                        background-color: #ededed;
+                                    }
+
+                                    span, p {
+                                        color: #164194;
+                                        font-family: @family-open;
+                                    }
+
+                                    span {
+                                        font-size: 2rem;
+                                        font-weight: bold;
+                                    }
+
+                                    p {
+                                        font-weight: bolder;
+                                        margin: 0;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    flex-basis: 60%;
+
+                                    p {
+                                        color: #13932E;
+                                        font-family: @family-open;
+                                        font-size: 1.4rem;
+                                        font-weight: bolder;
+                                        text-align: left;
+                                        padding-left: 2.5rem;
+
+                                        span {
+                                            font-weight: bold;
+                                            font-size: 2.2rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        > article {
+                            h4 {
+                                font-family: @family-open;
+                                font-weight: bold;
+                                font-size: 1.4rem;
+                                color: @noir;
+                                margin-bottom: 0;
+                            }
+
+                            > div {
+                                display: flex;
+                                flex-flow: row nowrap;
+                                align-items: center;
+
+                                &:first-of-type {
+                                    margin: 0.5rem 0;
+                                }
+
+                                > span {
+                                    font-family: @family-open;
+                                    font-size: 1.2rem;
+                                    color: #A0A0A0;
+                                    margin-left: 1.5rem;
+                                }
+
+                                > p {
+                                    font-size: 1.3rem;
+                                    font-family: @family-open;
+                                    font-weight: bolder;
+                                    color: #13932E;
+                                    margin: 0;
+
+                                    &::before {
+                                        content: '\f00c';
+                                        display: inline-block;
+                                        font-family: FontAwesome;
+                                        margin-right: 0.5rem;
+                                    }
+                                }
+                            }
+
+                            > p {
+                                font-size: 1.3rem;
+                                font-family: @family-open;
+                                color: @noir;
+                            }
+                        }
+                    }
+
+                    > section.more-article {
+                        h2 {
+                            text-transform: uppercase;
+                            color: #164194;
+                            font-weight: lighter;
+                        }
+
+                        #more-article {
+                            .slick-slide {
+                                padding: 1.5rem;
+
+                                img {
+                                    max-width: 100%;
+                                    height: auto;
+                                    overflow: hidden;
+                                }
+
+                                h5 {
+                                    font-family: @family-open;
+                                    font-weight: bold;
+                                    font-size: 1.1rem;
+                                    color: @noir;
+                                    margin-bottom: 0;
+                                }
+
+                                h6 {
+                                    font-family: @family-open;
+                                    font-size: 1.1rem;
+                                    color: #A8A8A7;
+                                    margin-top: 0.5rem;
+                                    margin-bottom: 0;
+                                    text-transform: uppercase;
+                                }
+
+                                > div {
+                                    display: flex;
+                                    flex-flow: row nowrap;
+                                    align-items: center;
+
+                                    > div {
+                                        color: @noir;
+                                        font-family: @family-open;
+
+                                        &:first-of-type {
+                                            flex: 1;
+
+                                            p {
+                                                display: inline-block;
+                                                position: relative;
+
+                                                &::before {
+                                                    content: '';
+                                                    width: 100%;
+                                                    height: 1px;
+                                                    background-color: #E60000;
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    bottom: 0;
+                                                }
+                                            }
+                                        }
+
+                                        &:last-of-type {
+                                            p {
+                                                color: #E60000;
+                                                font-weight: bold;
+                                            }
+                                        }
+
+                                        p {
+                                            font-size: 1.1rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            > footer {
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: center;
+                height: 45px;
+
+                > div {
+                    &:last-of-type{
+                        width: 70%;
+                        a{
+                            display: block;
+                            text-decoration: none;
+                            text-align: center;
+                            height: 45px;
+                            padding-top: 1.5rem;
+                        }
+                    }
+
+                    &:first-of-type {
+                        background-color: #f3f3f3;
+                        width: 30%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        > p {
+                            margin: 0;
+                            &:first-of-type {
+                                display: inline-block;
+                                position: relative;
+                                color: @noir;
+
+                                &::before {
+                                    content: '';
+                                    width: 100%;
+                                    height: 1px;
+                                    background-color: #E60000;
+                                    position: absolute;
+                                    top: 50%;
+                                    bottom: 0;
+                                }
+                            }
+
+                            &:last-of-type {
+                                color: #E60000;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
