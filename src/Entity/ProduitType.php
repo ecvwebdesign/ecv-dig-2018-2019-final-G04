@@ -43,6 +43,11 @@ class ProduitType
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $marque;
+
     public function __construct()
     {
         $this->produits = new ArrayCollection();
@@ -132,6 +137,18 @@ class ProduitType
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getMarque(): ?string
+    {
+        return $this->marque;
+    }
+
+    public function setMarque(string $marque): self
+    {
+        $this->marque = $marque;
 
         return $this;
     }
