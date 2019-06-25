@@ -36,6 +36,6 @@ class ProduitsController extends AbstractController
         $oldNumber = $produit->getPrix();
         $newNumber = $produit->getPrixPromo();
         $reduction = round($oldNumber - $newNumber);
-        return $this->render('produit/singleProduit2.html.twig', ["produit" => $produit, "produitType" => $produitType, "allProduitType" => $allProduitType, "reduction" => $reduction]);
+        return $this->render('produit/singleProduit.html.twig', ["produit" => $produit, "produitType" => $produitType, "allProduitType" => $allProduitType, "reduction" => $reduction]);
     }
 }
