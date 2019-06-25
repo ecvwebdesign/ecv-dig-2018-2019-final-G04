@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Produit{% endblock %}
 
 {% block body %}
-{% for produit in produits %}
-
-    <h3>{{ produit.libelle }}</h3>
-    <img src="{{ produit.image }}" alt="">
-    <p>{{ produit.prix }} €</p>
-    <p>{{ produit.quantite }} restant</p>
-    <p>{{ produit.taille }}</p>
-    <form action="{{  path("singleProduit", {"id": produit.id}) }}">
-        <input type="submit" value="Voir plus">
-    </form>
-    {% endfor %}
+    <main id="main" role="main" class="produit">
+        {% for produit in produits %}
+            <article>
+                <header>
+                    <h3>{{ produit.libelle }}</h3>
+                </header>
+                <section>
+                    <img src="{{ produit.image }}" alt="">
+                    <p>{{ produit.prix }} €</p>
+                    <p>{{ produit.quantite }} restant</p>
+                    <p>{{ produit.taille }}</p>
+                </section>
+                <footer>
+                    <form action="{{ path("singleProduit", {"id": produit.id}) }}">
+                        <input class="btn btn-fondbleu" type="submit" value="Voir plus">
+                    </form>
+                </footer>
+            </article>
+        {% endfor %}
+    </main>
 {% endblock %}

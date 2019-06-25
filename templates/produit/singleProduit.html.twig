@@ -1,167 +1,177 @@
 {% extends 'base.html.twig' %}
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
-            <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
-        {% endblock %}
+{% block title %}Single Produit{% endblock %}
 
-{% block title %}Produit{% endblock %}
-
-{% block body %}
-    <article>
-        <section>
-            <div>
-                <p>64,99€</p>
-                <p>34,99 €</p>
-            </div>
-            <div>
-                <a href="">
-                    <p>Voir les disponibilités</p>
-                </a>
-            </div>
-        </section>
-        <div>
-            <img src="" alt="">
-            <p>-47 %</p>
-        </div>
-        <section>
-            <section>
-                <div>
-                    <p>Couleurs disponibles</p>
-                    <div>
-                        <div>couleur 1</div>
-                        <div>couleur 2</div>
-                    </div>
-                </div>
-                <h1>Sneakers homme Tanjun Se</h1>
-                <h3>NIKE</h3>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                    </div>
-                    <p>10 avis</p>
-                </div>
-                <p>« Tanjun » signifie « simplicité » en japonais et la chaussure en est la parfaite illustration. Cette
-                    édition spéciale au design moderne à la fois pratique et confortable est ornée d'un logo Swoosh
-                    métallique pour un style sophistiqué.</p>
-            </section>
-            <section>
-                <h2>CARACTERISTIQUES</h2>
-                <table>
-                    <tr>
-                        <th>Composition</th>
-                        <th>Coton</th>
-                    </tr>
-                    <tr>
-                        <th>Couleurs</th>
-                        <th>Gris anthracite, bordeaux</th>
-                    </tr>
-                    <tr>
-                        <th>Poids</th>
-                        <th>300 grammes</th>
-                    </tr>
-                    <tr>
-                        <th>...</th>
-                        <th>...</th>
-                    </tr>
-                </table>
-                <a href="">Plus de détails</a>
-            </section>
-            <section>
-                <h2>Avis de nos clients</h2>
-                <div>
-                    <div>
-                        <span>3,9/5</span>
+    {% block body %}
+        <main id="main" role="main" class="singleproduit">
+            <article>
+                <header>
+                    <div id="slider-singleproduit">
                         <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
+                            <div class="reduction">
+                                <p class="btn btn-reduction">-47 %</p>
+                            </div>
                         </div>
-                        <p>10 avis</p>
-                    </div>
-                    <div>
-                        <p>80% des clients recommandent ce produit</p>
-                    </div>
-                </div>
-                <article>
-                    <h4>J'ai reçu une autre couleur</h4>
-                    <div>
                         <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <img src="{{ asset('assets/images/Header_produit_01b.png') }}" alt="">
+                            <div class="reduction">
+                                <p class="btn btn-reduction">-47 %</p>
+                            </div>
                         </div>
-                        <span>Kamel H. - le 22/06/19</span>
                     </div>
-                    <div>
-                        <img src="" alt="">
-                        <p>Je recommande ce produit</p>
-                    </div>
-                    <p></p>
-                </article>
-                <article>
-                    <h4>J'ai reçu une autre couleur</h4>
-                    <div>
-                        <div>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt="">
+                </header>
+                <section>
+                    <header>
+                        <div class="couleur">
+                            <p>Couleurs disponibles</p>
+                            <div>
+                                <div></div>
+                                <div></div>
+                            </div>
                         </div>
-                        <span>Kamel H. - le 22/06/19</span>
+                        <h1>Sneakers homme Tanjun Se</h1>
+                        <h3>NIKE</h3>
+                        <div class="etoile">
+                            <div>
+                                <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                <img src="{{ asset('assets/images/icone_star_empty.png') }}" alt="">
+                                <img src="{{ asset('assets/images/icone_star_empty.png') }}" alt="">
+                            </div>
+                            <p>10 avis</p>
+                        </div>
+                        <p class="description-produit">« Tanjun » signifie « simplicité » en japonais et la chaussure en
+                            est la parfaite
+                            illustration.
+                            Cette
+                            édition spéciale au design moderne à la fois pratique et confortable est ornée d'un logo
+                            Swoosh
+                            métallique pour un style sophistiqué.</p>
+                    </header>
+                    <section>
+                        <section class="caracteristique">
+                            <h2>CARACTERISTIQUES</h2>
+                            <table>
+                                <tr>
+                                    <th>Composition</th>
+                                    <th>Coton</th>
+                                </tr>
+                                <tr>
+                                    <th>Couleurs</th>
+                                    <th>Gris anthracite, bordeaux</th>
+                                </tr>
+                                <tr>
+                                    <th>Poids</th>
+                                    <th>300 grammes</th>
+                                </tr>
+                                <tr>
+                                    <th>...</th>
+                                    <th>...</th>
+                                </tr>
+                            </table>
+                            <a class="btn btn-detail" href="">Plus de détails</a>
+                        </section>
+                        <section class="avis">
+                            <h2>Avis de nos clients</h2>
+                            <div>
+                                <div>
+                                    <span>3,9/5</span>
+                                    <div>
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_empty.png') }}" alt="">
+                                    </div>
+                                    <p>10 avis</p>
+                                </div>
+                                <div>
+                                    <p><span>80%</span> des clients recommandent ce produit</p>
+                                </div>
+                            </div>
+                            <article>
+                                <h4>J'ai reçu une autre couleur</h4>
+                                <div>
+                                    <div>
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_empty.png') }}" alt="">
+                                    </div>
+                                    <span>Kamel H. - le 22/06/19</span>
+                                </div>
+                                <div>
+                                    <p>Je recommande ce produit</p>
+                                </div>
+                                <p>J'ai reçu une autre couleur que celle que j'ai commandé. J'ai commandé du bleu, je me
+                                    retrouve avec une grise mais comme je pars à l'étranger et ... c'est pour offir à
+                                    quelqu'un, j'ai pas trop le temps de faire un change.</p>
+                            </article>
+                            <article>
+                                <h4>très satisfait</h4>
+                                <div>
+                                    <div>
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                    </div>
+                                    <span>Franck C. - le 15/06/19</span>
+                                </div>
+                                <div>
+                                    <p>Je recommande ce produit</p>
+                                </div>
+                                <p>Ma commande s'est bien passée. Aucune difficultée rencontrée. Livraison rapide et
+                                    simple. J'adore ce que vous faites. Il y aura d'autres commandes :-)</p>
+                            </article>
+                            <a class="btn btn-detail" href="">Voir tous les avis</a>
+                        </section>
+                        <section class="more-article">
+                            <h2>Vous aimerez aussi</h2>
+                            <div id="more-article">
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                                    <h6>Nike</h6>
+                                    <div>
+                                        <div class="prix"><p>74.99€</p></div>
+                                        <div class="prix-reduction"><p>44.99€</p></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                                    <h6>Nike</h6>
+                                    <div>
+                                        <div class="prix"><p>74.99€</p></div>
+                                        <div class="prix-reduction"><p>44.99€</p></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                                    <h6>Nike</h6>
+                                    <div>
+                                        <div class="prix"><p>74.99€</p></div>
+                                        <div class="prix-reduction"><p>44.99€</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+                <footer>
+                    <div>
+                        <p>64,99€</p>
+                        <p>34,99 €</p>
                     </div>
                     <div>
-                        <img src="" alt="">
-                        <p>Je recommande ce produit</p>
+                        <a class="btn btn-fondbleu" href="">Voir les disponibilités</a>
                     </div>
-                    <p></p>
-                </article>
-                <a href="">Plus de détails</a>
-            </section>
-            <section>
-
-            </section>
-            <section>
-                <div>
-                    <img src="" alt="">
-                    <p>s'engage</p>
-                </div>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                        <span>Livraison en 48h</span>
-                        <p>A domicile et en points relais</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <span>Retrait gratuit en magasin</span>
-                        <p>Votre commande est préparée sous 4 heures en magasin</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <span>Satisfait ou remboursé</span>
-                        <p>Vous avez 15 jours pour changer d'avis</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                        <span>Service client</span>
-                        <p>Une réponse rapide et personnalisée</p>
-                    </div>
-                </div>
-            </section>
-        </section>
-<<<<<<< HEAD
-    </article>
-{% endblock %}
-=======
-</article>
-{% endblock %}
->>>>>>> 786771bf8dc39c6850e6bcc4372fdaff994b7e02
+                </footer>
+            </article>
+        </main>
+    {% endblock %}
