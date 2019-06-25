@@ -3,6 +3,10 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    {% endblock %}
     <body style="background-color:grey;">
     <article>
         <section>
@@ -43,8 +47,36 @@
                     <span id="more">+</span>
                 </div>
             </div>
+            <div>
+                <h2>Choix de livraison</h2>
+                <div>
+                    <input id="rechercheMagasin" type="text">
+                    <div id="choiceMagasin" style="display:none;"><p>Intersport Pessac - 33 600</p></div>
+                    <p id="dispoMagasin">Produit disponible dans ce magasin</p>
+                </div>
+            </div>
         </section>
     </article>
+    <div>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-plus"></i> Ajouter un article
+        </button>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalTitle">Article ajouté au panier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
     </body>
 {% endblock %}
 {% block javascripts %}
@@ -72,6 +104,59 @@
                 $("#wish").css("display", "none")
             }
         }
+            $('#rechercheMagasin').on('input', function() {
+                if($("#rechercheMagasin").val() === "pessac"){
+                    $("#choiceMagasin").css("display", "block");
+                }
+            });
+            $("#choiceMagasin").click(function(){
+                $("#rechercheMagasin").val("Intersport Pessac - 33 600");
+                $("#dispoMagasin").text("Produit indisponible dans ce magasin");
+            });
+
         });
     </script>
+        {{ parent() }}
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+        <script>
+            $('#exampleModal').on('shown.bs.modal', function () {
+                var modal = $(this);
+                $.ajax('{{ path('popUpProduit') }}', {
+                    success: function(data) {
+                        modal.find('.modal-body').html(data);
+                    }
+                });
+            });
+
+            $(document).on('submit', 'form', function(e){
+                e.preventDefault();
+
+                $form = $(e.target);
+                modal = $('#exampleModal');
+
+                var title = $('#article_title').val();
+
+                var $submitButton = $form.find(':submit');
+                $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
+                $submitButton.prop('disabled', true);
+
+                $form.ajaxSubmit({
+                    type: 'post',
+                    success: function(data) {
+                        if (data == 'ok') {
+                            $('ul').append('<li>' + title + '</li>');
+                            modal.modal('toggle');
+                        } else {
+                            modal.find('.modal-body').html(data);
+                        }
+                    },
+                    error: function(jqXHR, status, error) {
+                        $submitButton.html(button.data('label'));
+                        $submitButton.prop('disabled', false);
+                    }
+                });
+            });
+        </script>
 {% endblock %}
