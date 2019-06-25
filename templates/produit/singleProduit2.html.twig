@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
-        {% block stylesheets %}
-        {% endblock %}
 {% block title %}Produit{% endblock %}
 
 {% block body %}
+<body style="background-color:grey;">
+
 <article>
         <section>
                 <div>
@@ -11,7 +11,7 @@
                         <p>{{ produit.prixPromo }} €</p>
                 </div>
                 <div>
-                        <a href="">
+                        <a href="{{ path("choix", {"id": produit.id}) }}">
                                 <p>Voir les disponibilités</p>
                         </a>
                 </div>
@@ -30,7 +30,10 @@
                                         {% endfor %}
                                 </div>
                         </div>
-                        <h1>{{ produit.libelle }}</h1>
+                        <div>
+                                <h1>{{ produit.libelle }}</h1>
+                                <div id="coeur"><p>COEUR</p></div>
+                        </div>
                         <h3>{{ produitType.marque }}</h3>
                         <div>
                                 <div>
@@ -163,4 +166,31 @@
                 </section>
         </section>
 </article>
+<body/>
+{% endblock %}
+
+{% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+
+                $(document).ready(function(){
+                        changeWish();
+                        $("#coeur").click(function(){
+                                if(localStorage.getItem("wish") == "0"){
+                                        localStorage.setItem('wish', "1");
+                                        changeWish()
+                                }else{
+                                        localStorage.setItem('wish', "0");
+                                        changeWish()
+                                }
+                        });
+                        function changeWish(){
+                                if (localStorage.getItem("wish") == "1") {
+                                        $("#wish").css("display", "block")
+                                }else{
+                                        $("#wish").css("display", "none")
+                                }
+                        }
+                });
+        </script>
 {% endblock %}
