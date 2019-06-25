@@ -88,12 +88,15 @@ header > div .menu-burger.active span.burger::after {
 }
 header > div nav ul {
   display: none;
+  background-color: #ffffff;
+  z-index: 1;
 }
 header > div nav.active ul:first-of-type {
   display: block;
   position: absolute;
   width: 100%;
   left: 0;
+  top: 6rem;
   text-align: left;
   padding: 2.5rem 0;
   padding-left: 2.5rem;
