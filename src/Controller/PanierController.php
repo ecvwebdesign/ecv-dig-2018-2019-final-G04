@@ -89,8 +89,6 @@ class PanierController extends AbstractController
             )[0]->getImage();
         }
 
-    dd("test");
-
 
         $commande = new Commande();
         $form = $this->createFormBuilder($commande)

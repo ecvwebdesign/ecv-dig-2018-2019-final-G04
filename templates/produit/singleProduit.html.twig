@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}Single Produit{% endblock %}
-
-{% block title %}Produit{% endblock %}
-    {% block body %}
+ {% block body %}
         <main id="main" role="main" class="singleproduit">
             <article>
                 <header>
@@ -178,9 +176,33 @@
                         <p>34,99 €</p>
                     </div>
                     <div>
-                        <a class="btn btn-fondbleu" href="">Voir les disponibilités</a>
+                        <a class="btn btn-fondbleu" href="{{ path("choix", {"id": produit.id}) }}">Voir les disponibilités</a>
                     </div>
                 </footer>
             </article>
         </main>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script>
+         $(document).ready(function(){
+             changeWish();
+             $("h1").click(function(){
+                 if(localStorage.getItem("wish") == "0"){
+                     localStorage.setItem('wish', "1");
+                     changeWish()
+                 }else{
+                     localStorage.setItem('wish', "0");
+                     changeWish()
+                 }
+             });
+             function changeWish(){
+                 if (localStorage.getItem("wish") == "1") {
+                     $("#wish").css("display", "block")
+                 }else{
+                     $("#wish").css("display", "none")
+                 }
+             }
+         });
+     </script>
     {% endblock %}
+
+
