@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<article style="background-color:grey;">
+    <section>
+        <p>01.Panier</p>
+        <p>02.Identification</p>
+        <p>03.Livraison</p>
+        <p>04.Paiement</p>
+    </section>
+    <section id="step2">
+        <h2>Mon compte Intersport</h2>
+        <div class="displayMore">
+            <div>
+                <div>
+                    <p>Je possède déjà un compte</p>
+                    <span>Se connecter</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+            <div class="hide" style="display:none;">
+                <section>
+                    <div>
+                        <p>Email</p>
+                        <div>Picto</div>
+                    </div>
+                    <input type="text" placeholder="Indiquez votre adresse mail">
+                </section>
+                <section>
+                    <div>
+                        <p>Email</p>
+                        <div>Picto</div>
+                        <span>Mot de passe oublié ?</span>
+                    </div>
+                    <input type="text" placeholder="Indiquez votre mot de passe">
+                </section>
+                <section>
+                    <button id="suivantTo2">Se connecter</button>
+                </section>
+            </div>
+        </div>
+        <div class="displayMore">
+            <div>
+                <div>
+                    <p>C'est ma première visite</p>
+                    <span>Créer un compte</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+            <div class="hide" style="display:none;">
+                <div>
+                    <p>Email</p>
+                    <div>Picto</div>
+                </div>
+                <input type="text" placeholder="Indiquez votre adresse mail">
+            </div>
+        </div>
+    </section>
+    <section id="step3" style="display: none">
+        <h2>Mon mode de livraison</h2>
+        <div>
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Retrait en magasin</p>
+                    <span>Gratuit</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Livraison en point relais</p>
+                    <span>à partir de 2,50 €</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+        </div>
+        <div class="displayMore">
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Livraison à domicile</p>
+                    <span>à partir de 4,99€</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+            <div class="hide" style="display:none;">
+                <div>
+                    <p>Utiliser mon adresse par défaut</p>
+                    <span>M. Michel Duval</span>
+                    <span>17 Place Paul Doumer</span>
+                    <span>33000 Bordeaux</span>
+                    <p>Modifier l'adresse de livraison</p>
+                </div>
+                <input type="text" placeholder="Indiquez votre adresse mail">
+            </div>
+        </div>
+    </section>
+</article>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(".displayMore").click(function(){
+            $(".hide").css("display","none");
+            $(this).find(".hide").css("display", "block")
+        });
+        $("#suivantTo2").click(function(){
+            $("#step2").hide();
+            $("#step3").show();
+        })
+    </script>
+{% endblock %}

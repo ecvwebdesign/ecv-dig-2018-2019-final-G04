@@ -40,10 +40,10 @@
                 </div>
             </div>
             <div>
-                <h2>Quantité</h2>
+                <h2>Nombre d'article</h2>
                 <div>
                     <span id="less">-</span>
-                    <input id="quantity" type="text" value="1">
+                    <p id="quantity" type="text">1</p>
                     <span id="more">+</span>
                 </div>
             </div>
@@ -52,15 +52,17 @@
                 <div>
                     <input id="rechercheMagasin" type="text">
                     <div id="choiceMagasin" style="display:none;"><p>Intersport Pessac - 33 600</p></div>
-                    <p id="dispoMagasin">Produit disponible dans ce magasin</p>
+                    <p id="dispoMagasin">Disponible</p>
                 </div>
+            </div>
+            <div>
+                <h2>Se faire livrer</h2>
+                <p>Disponible</p>
             </div>
         </section>
     </article>
     <div>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-plus"></i> Ajouter un article
-        </button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Réserver en magasin</button>
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
@@ -85,12 +87,12 @@
         $(document).ready(function(){
             changeWish();
             $("#less").click(function(){
-                if(parseInt($("#quantity").val()) > 1){
-                    $("#quantity").val(parseInt($("#quantity").val()) - 1);
+                if(parseInt(parseInt($("#quantity").text())) > 1){
+                    $("#quantity").text(parseInt($("#quantity").text()) - 1);
                 }
             });
             $("#more").click(function(){
-                $("#quantity").val(parseInt($("#quantity").val()) + 1);
+                $("#quantity").text(parseInt($("#quantity").text()) + 1);
             })
         $(".changeCouleur").each(function(){
             $(this).click(function(){
@@ -111,13 +113,12 @@
             });
             $("#choiceMagasin").click(function(){
                 $("#rechercheMagasin").val("Intersport Pessac - 33 600");
-                $("#dispoMagasin").text("Produit indisponible dans ce magasin");
+                $("#dispoMagasin").text("INDISPONIBLE DANS CE MAGASIN");
             });
 
         });
     </script>
         {{ parent() }}
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
         <script>
