@@ -20,7 +20,7 @@
         <div>
             <ul>
                 <li><a href="#"><img src="{{ asset('assets/images/menu-loupe.png') }}" alt="Icon de recherche"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/images/menu_fav.png') }}" alt="Icon liste de favoris"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/images/menu_fav.png') }}" alt="Icon liste de favoris"></a><span id="wish" style="display:none;">Oui</span></li>
                 <li><a href="#"><img src="{{ asset('assets/images/menu_bag.png') }}" alt="Icon panier"></a></li>
             </ul>
             <nav>
@@ -54,6 +54,11 @@
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+
+        });
+    </script>
 {% endblock %}
 </body>
 </html>
