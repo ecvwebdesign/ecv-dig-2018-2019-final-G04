@@ -9,13 +9,13 @@
                         <div>
                             <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
                             <div class="reduction">
-                                <p class="btn btn-reduction">-47 %</p>
+                                <p class="btn btn-reduction">- {{ reduction }} %</p>
                             </div>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/Header_produit_01b.png') }}" alt="">
                             <div class="reduction">
-                                <p class="btn btn-reduction">-47 %</p>
+                                <p class="btn btn-reduction">- {{ reduction }} %</p>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                                 <div></div>
                             </div>
                         </div>
-                        <h1>Sneakers homme Tanjun Se</h1>
-                        <h3>NIKE</h3>
+                        <h1>{{ produit.libelle }}</h1>
+                        <h3>{{ produitType.marque }}</h3>
                         <div class="etoile">
                             <div>
                                 <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
@@ -53,18 +53,26 @@
                         <section class="caracteristique">
                             <h2>CARACTERISTIQUES</h2>
                             <table>
-                                <tr>
-                                    <th>Composition</th>
-                                    <th>Coton</th>
-                                </tr>
+                                {% if produitType.composition %}
+                                    <tr>
+                                        <th>Composition</th>
+                                        <th>{{ produitType.composition }}</th>
+                                    </tr>
+                                {% endif %}
                                 <tr>
                                     <th>Couleurs</th>
-                                    <th>Gris anthracite, bordeaux</th>
+                                    <th>
+                                        {% for sameProduit in allProduitType %}
+                                            {{ sameProduit.couleur }}
+                                        {% endfor %}
+                                    </th>
                                 </tr>
-                                <tr>
-                                    <th>Poids</th>
-                                    <th>300 grammes</th>
-                                </tr>
+                                {% if produitType.poids %}
+                                    <tr>
+                                        <th>Poids</th>
+                                        <th>{{ produitType.poids }}</th>
+                                    </tr>
+                                {% endif %}
                                 <tr>
                                     <th>...</th>
                                     <th>...</th>
