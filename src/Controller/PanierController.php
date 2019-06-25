@@ -100,4 +100,12 @@ class PanierController extends AbstractController
             "form" => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/produit/add", name="popUpProduit")
+     */
+    public function popUpProduit()
+    {
+        return $this->render('produit/popUpProduit.html.twig');
+    }
 }
