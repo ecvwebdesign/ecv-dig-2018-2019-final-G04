@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TunelAchatController extends AbstractController
 {
     /**
-     * @Route("/tunel/achat", name="tunel_achat")
+     * @Route("/panier", name="panier")
      */
     public function index()
     {

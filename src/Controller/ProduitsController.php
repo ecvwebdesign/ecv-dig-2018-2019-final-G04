@@ -38,4 +38,12 @@ class ProduitsController extends AbstractController
         $reduction = round($oldNumber - $newNumber);
         return $this->render('produit/singleProduit.html.twig', ["produit" => $produit, "produitType" => $produitType, "allProduitType" => $allProduitType, "reduction" => $reduction]);
     }
+    /**
+     * @Route("/produit/", name="produit")
+     */
+    public function produit(){
+        return $this->render('produit/singleProduit.html.twig');
+
+    }
 }
+
