@@ -3,11 +3,7 @@
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-    {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    {% endblock %}
-    <body style="background-color:grey;">
+    <body>
     <article>
         <section>
             <img id="mainCouleur" src="{{ produit.image }}" alt="">
@@ -83,6 +79,7 @@
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
     <script>
         $(document).ready(function(){
             changeWish();
