@@ -774,6 +774,7 @@ main.choix > article > footer button {
   border: none;
   padding: 1.5rem 0;
   cursor: pointer;
+  font-weight: bold;
 }
 html {
   height: 100%;
