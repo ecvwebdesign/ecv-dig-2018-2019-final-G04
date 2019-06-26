@@ -1,163 +1,176 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+{#    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"#}
+{#          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"#}
+{#          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+{% endblock %}
 {% block title %}Panier{% endblock %}
 
 {% block body %}
-    {% block stylesheets %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    {% endblock %}
-    <body style="background-color:grey;">
-    <article>
-        <section>
-            <img id="mainCouleur" src="{{ produit.image }}" alt="">
-            <div>
-                <p>{{ produit.prix }}</p>
-                <p>{{ produit.prixPromo }}</p>
-            </div>
-        </section>
-        <section>
-            <div>
-                <h2>Choisir une couleur</h2>
-                <div>
-                    {% for imageCouleur in couleursImages %}
-                        <div class="changeCouleur">
-                            <img src="{{ imageCouleur }}" alt="">
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div>
-                <h2>Choisir une taille</h2>
-                <div>
-                    <div><p>38</p></div>
-                    <div><p>38,5</p></div>
-                    <div><p>39</p></div>
-                    <div><p>40</p></div>
-                    <div><p>41</p></div>
-                    <div><p>42</p></div>
-                    <div><p>43</p></div>
-                </div>
-            </div>
-            <div>
-                <h2>Nombre d'article</h2>
-                <div>
-                    <span id="less">-</span>
-                    <p id="quantity" type="text">1</p>
-                    <span id="more">+</span>
-                </div>
-            </div>
-            <div>
-                <h2>Choix de livraison</h2>
-                <div>
-                    <input id="rechercheMagasin" type="text">
-                    <div id="choiceMagasin" style="display:none;"><p>Intersport Pessac - 33 600</p></div>
-                    <p id="dispoMagasin">Disponible</p>
-                </div>
-            </div>
-            <div>
-                <h2>Se faire livrer</h2>
-                <p>Disponible</p>
-            </div>
-        </section>
-    </article>
-    <div>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Réserver en magasin</button>
-    </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalTitle">Article ajouté au panier</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    <body>
+    <main id="main" role="main" class="choix">
+        <article>
+            <header>
+                <img id="mainCouleur" src="{{ produit.image }}" alt="">
+                <p>{{ produit.prix }}€</p>
+                <div class="reduction">
+                    <p class="btn btn-reduction">33.99€{{ produit.prixPromo }}</p>
                 </div>
-                <div class="modal-body">
+            </header>
+            <section>
+                <div class="choix-couleur">
+                    <h2>Choisir une couleur</h2>
+                    <div>
+                        {% for imageCouleur in couleursImages %}
+                            <div class="changeCouleur">
+                                <img src="{{ imageCouleur }}" alt="">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="choix-taille">
+                    <h2>Choisir une taille</h2>
+                    <div>
+                        <div class="disabled"><p>38</p></div>
+                        <div><p>38,5</p></div>
+                        <div class="active"><p>39</p></div>
+                        <div><p>40</p></div>
+                        <div class="disabled"><p>41</p></div>
+                        <div><p>42</p></div>
+                        <div><p>43</p></div>
+                    </div>
+                </div>
+                <div class="choix-article">
+                    <h2>Nombre d'article</h2>
+                    <div>
+                        <span id="less">-</span>
+                        <p id="quantity" type="text">1</p>
+                        <span id="more">+</span>
+                    </div>
+                </div>
+                <div class="choix-livraison">
+                    <h2>Choix de livraison</h2>
+                    <span>Séléctionner une option</span>
+                    <div>
+                        <p class="reserver">Réserver en magasin</p>
+                        <div class="input"><input id="rechercheMagasin" type="text"></div>
+                        <div id="choiceMagasin" style="display:none;"><p>Intersport Pessac - 33 600</p></div>
+                        <p id="dispoMagasin">Disponible</p>
+                    </div>
+                </div>
+                <div class="choix-lieu">
+                    <h2>Se faire livrer</h2>
+                    <p>Disponible</p>
+                </div>
+            </section>
+            <footer>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Réserver en magasin</button>
+            </footer>
+        </article>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalTitle">Article ajouté au panier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     </body>
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             changeWish();
-            $("#less").click(function(){
-                if(parseInt(parseInt($("#quantity").text())) > 1){
+            $("#less").click(function () {
+                if (parseInt(parseInt($("#quantity").text())) > 1) {
                     $("#quantity").text(parseInt($("#quantity").text()) - 1);
                 }
             });
-            $("#more").click(function(){
+            $("#more").click(function () {
                 $("#quantity").text(parseInt($("#quantity").text()) + 1);
             })
-        $(".changeCouleur").each(function(){
-            $(this).click(function(){
-                $("#mainCouleur").attr("src", $(this).find("img").attr("src"));
-            })
-        });
-        function changeWish(){
-            if (localStorage.getItem("wish") == "1") {
-                $("#wish").css("display", "block")
-            }else{
-                $("#wish").css("display", "none")
+            $(".changeCouleur").each(function () {
+                $(this).click(function () {
+                    $("#mainCouleur").attr("src", $(this).find("img").attr("src"));
+                })
+            });
+
+            function changeWish() {
+                if (localStorage.getItem("wish") == "1") {
+                    $("#wish").css("display", "block")
+                } else {
+                    $("#wish").css("display", "none")
+                }
             }
-        }
-            $('#rechercheMagasin').on('input', function() {
-                if($("#rechercheMagasin").val() === "pessac"){
+
+            $('#rechercheMagasin').on('input', function () {
+                if ($("#rechercheMagasin").val() === "pessac") {
                     $("#choiceMagasin").css("display", "block");
                 }
             });
-            $("#choiceMagasin").click(function(){
+            $("#choiceMagasin").click(function () {
                 $("#rechercheMagasin").val("Intersport Pessac - 33 600");
                 $("#dispoMagasin").text("INDISPONIBLE DANS CE MAGASIN");
             });
 
         });
     </script>
-        {{ parent() }}
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
-        <script>
-            $('#exampleModal').on('shown.bs.modal', function () {
-                var modal = $(this);
-                $.ajax('{{ path('popUpProduit') }}', {
-                    success: function(data) {
+    {{ parent() }}
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script>
+        $('#exampleModal').on('shown.bs.modal', function () {
+            var modal = $(this);
+            $.ajax('{{ path('popUpProduit') }}', {
+                success: function (data) {
+                    modal.find('.modal-body').html(data);
+                }
+            });
+        });
+
+        $(document).on('submit', 'form', function (e) {
+            e.preventDefault();
+
+            $form = $(e.target);
+            modal = $('#exampleModal');
+
+            var title = $('#article_title').val();
+
+            var $submitButton = $form.find(':submit');
+            $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
+            $submitButton.prop('disabled', true);
+
+            $form.ajaxSubmit({
+                type: 'post',
+                success: function (data) {
+                    if (data == 'ok') {
+                        $('ul').append('<li>' + title + '</li>');
+                        modal.modal('toggle');
+                    } else {
                         modal.find('.modal-body').html(data);
                     }
-                });
+                },
+                error: function (jqXHR, status, error) {
+                    $submitButton.html(button.data('label'));
+                    $submitButton.prop('disabled', false);
+                }
             });
-
-            $(document).on('submit', 'form', function(e){
-                e.preventDefault();
-
-                $form = $(e.target);
-                modal = $('#exampleModal');
-
-                var title = $('#article_title').val();
-
-                var $submitButton = $form.find(':submit');
-                $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
-                $submitButton.prop('disabled', true);
-
-                $form.ajaxSubmit({
-                    type: 'post',
-                    success: function(data) {
-                        if (data == 'ok') {
-                            $('ul').append('<li>' + title + '</li>');
-                            modal.modal('toggle');
-                        } else {
-                            modal.find('.modal-body').html(data);
-                        }
-                    },
-                    error: function(jqXHR, status, error) {
-                        $submitButton.html(button.data('label'));
-                        $submitButton.prop('disabled', false);
-                    }
-                });
-            });
-        </script>
+        });
+    </script>
 {% endblock %}
