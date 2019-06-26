@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage{% endblock %}
+
+{% block body %}
+
+    <main id="main" role="main" class="homepage">
+        <section class="section1">
+            <img src="{{ asset('assets/images/laura-pluth-RMicIhNOOIg-unsplash.jpg') }}" alt="">
+            <div>
+                <span>Notre sélection d'articles plein air à prix réduits</span>
+                <p>Tous en pleine nature !</p>
+            </div>
+        </section>
+        <section class="section2">
+            <h2>En ce moment <br> chez intersport</h2>
+            <div>
+                <img src="{{ asset('assets/images/foot.jpg') }}" alt="">
+                <a href="#" class="btn btn-detail">Voir tous les maillots</a>
+            </div>
+        </section>
+        <section class="section3">
+            <h2>Nos produits populaires</h2>
+            <div id="more-article">
+                <div>
+                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                    <h6>Nike</h6>
+                    <div>
+                        <div class="prix"><p>74.99€</p></div>
+                        <div class="prix-reduction"><p>44.99€</p></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                    <h6>Nike</h6>
+                    <div>
+                        <div class="prix"><p>74.99€</p></div>
+                        <div class="prix-reduction"><p>44.99€</p></div>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                    <h6>Nike</h6>
+                    <div>
+                        <div class="prix"><p>74.99€</p></div>
+                        <div class="prix-reduction"><p>44.99€</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section4">
+            <h2>Vos marques préférées <br> au meilleur prix</h2>
+            <div id="meilleur-prix">
+                <div>
+                    <img src="{{ asset('assets/images/slider_marques_1.png') }}" alt="">
+                    <div>
+                        <button class="btn btn-fondbleu">Homme</button>
+                        <button class="btn btn-fondbleu">Femme</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/slider_marques_2.png') }}" alt="">
+                    <div>
+                        <button class="btn btn-fondbleu">Homme</button>
+                        <button class="btn btn-fondbleu">Femme</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/slider_marques_2.png') }}" alt="">
+                    <div>
+                        <button class="btn btn-fondbleu">Homme</button>
+                        <button class="btn btn-fondbleu">Femme</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/slider_marques_2.png') }}" alt="">
+                    <div>
+                        <button class="btn btn-fondbleu">Homme</button>
+                        <button class="btn btn-fondbleu">Femme</button>
+                    </div>
+                </div>
+                <div>
+                    <img src="{{ asset('assets/images/slider_marques_2.png') }}" alt="">
+                    <div>
+                        <button class="btn btn-fondbleu">Homme</button>
+                        <button class="btn btn-fondbleu">Femme</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
