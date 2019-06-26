@@ -27,6 +27,13 @@ jQuery(document).ready(function () {
         dots: false,
     });
 
+    $('#meilleur-prix').slick({
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2,
+        arrows: false,
+        dots: false,
+    });
 
 
 });

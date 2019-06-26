@@ -1232,4 +1232,175 @@ main {
             }
         }
     }
+
+    &.homepage {
+        .section1 {
+            position: relative;
+
+            img {
+                max-width: 100%;
+            }
+
+            > div {
+                display: flex;
+                flex-flow: row wrap;
+                position: absolute;
+                width: 85%;
+                right: 0;
+                left: 0;
+                margin: 0 auto;
+                bottom: -3rem;
+                background-color: @blanc;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                padding: 2rem 1.5rem;
+                -webkit-box-shadow: 0 3px 6px rgba(#ebebec, 0.5);
+                -moz-box-shadow: 0 3px 6px rgba(#ebebec, 0.5);
+                box-shadow: 0 3px 6px rgba(#ebebec, 0.5);
+
+                &::after {
+                    content: '\f054';
+                    font-family: FontAwesome;
+                    position: absolute;
+                    right: 1rem;
+                    font-size: 2rem;
+                    color: #143f90;
+                    top: 50%;
+                    -webkit-transform: translate(-50%, -50%);
+                    -moz-transform: translate(-50%, -50%);
+                    -ms-transform: translate(-50%, -50%);
+                    -o-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+
+                p {
+                    color: #242b49;
+                    font-weight: bold;
+                    font-family: @family-open;
+                    margin: 0;
+                }
+
+                span {
+                    color: #7a7a7a;
+                }
+            }
+        }
+
+        .section2 {
+            padding: 1.5rem;
+            padding-top: 3rem;
+
+            h2 {
+                text-transform: uppercase;
+                color: #164194;
+                font-weight: lighter;
+                line-height: 1.3;
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            a {
+                text-transform: uppercase;
+                color: #164194;
+                font-size: 1.4rem;
+                margin: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        .section3 {
+            h2 {
+                text-transform: uppercase;
+                color: #164194;
+                font-weight: lighter;
+                line-height: 1.3;
+                padding-left: 1.5rem;
+            }
+
+            #more-article {
+                .slick-slide {
+                    padding: 1.5rem;
+
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        overflow: hidden;
+                    }
+
+                    h5 {
+                        font-family: @family-open;
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                        color: @noir;
+                        margin-bottom: 0;
+                    }
+
+                    h6 {
+                        font-family: @family-open;
+                        font-size: 1.1rem;
+                        color: #A8A8A7;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0;
+                        text-transform: uppercase;
+                    }
+
+                    > div {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+
+                        > div {
+                            color: @noir;
+                            font-family: @family-open;
+
+                            &:first-of-type {
+                                flex: 1;
+
+                                p {
+                                    display: inline-block;
+                                    position: relative;
+
+                                    &::before {
+                                        content: '';
+                                        width: 100%;
+                                        height: 1px;
+                                        background-color: #E60000;
+                                        position: absolute;
+                                        top: 50%;
+                                        bottom: 0;
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                p {
+                                    color: #E60000;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            p {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .section4{
+            h2 {
+                text-transform: uppercase;
+                color: #164194;
+                font-weight: lighter;
+                line-height: 1.3;
+                padding-left: 1.5rem;
+            }
+
+
+        }
+    }
 }
