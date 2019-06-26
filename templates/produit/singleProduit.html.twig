@@ -6,7 +6,7 @@
                 <header>
                     <div id="slider-singleproduit">
                         <div>
-                            <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
+                            <img src="{{ produit.image }}" alt="">
                             <div class="reduction">
                                 <p class="btn btn-reduction">- {{ reduction }} %</p>
                             </div>
@@ -72,12 +72,16 @@
                                         <th>{{ produitType.poids }}</th>
                                     </tr>
                                 {% endif %}
-                                <tr>
+                                <tr id="lessCarac">
                                     <th>...</th>
                                     <th>...</th>
                                 </tr>
+                                <tr style="display: none" id="moreCarac">
+                                    <th>Semelle</th>
+                                    <th>Caoutchouc</th>
+                                </tr>
                             </table>
-                            <a class="btn btn-detail" href="">Plus de détails</a>
+                            <a class="btn btn-detail" id="showMoreCarac" href="">Plus de détails</a>
                         </section>
                         <section class="avis">
                             <h2>Avis de nos clients</h2>
@@ -134,46 +138,48 @@
                                 <p>Ma commande s'est bien passée. Aucune difficultée rencontrée. Livraison rapide et
                                     simple. J'adore ce que vous faites. Il y aura d'autres commandes :-)</p>
                             </article>
-                            <a class="btn btn-detail" href="">Voir tous les avis</a>
+                            <article id="moreComment" style="display: none;">
+                                <h4>très satisfait</h4>
+                                <div>
+                                    <div>
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                        <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
+                                    </div>
+                                    <span>Franck C. - le 15/06/19</span>
+                                </div>
+                                <div>
+                                    <p>Je recommande ce produit</p>
+                                </div>
+                                <p>Ma commande s'est bien passée. Aucune difficultée rencontrée. Livraison rapide et
+                                    simple. J'adore ce que vous faites. Il y aura d'autres commandes :-)</p>
+                            </article>
+                            <a class="btn btn-detail" id="showMoreComment" href="">Voir tous les avis</a>
                         </section>
                         <section class="more-article">
                             <h2>Vous aimerez aussi</h2>
                             <div id="more-article">
-                                <div>
-                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
-                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
-                                    <h6>Nike</h6>
+                                {% for test in allProduitType %}
                                     <div>
-                                        <div class="prix"><p>74.99€</p></div>
-                                        <div class="prix-reduction"><p>44.99€</p></div>
+                                        <img src="{{ test.image }}" alt="">
+                                        <h5>{{ test.libelle }}</h5>
+                                        <h6>{{ test.produitType.marque }}</h6>
+                                        <div>
+                                            <div class="prix"><p>{{ test.prix }} €</p></div>
+                                            <div class="prix-reduction"><p>{{ test.prixPromo }} €</p></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div>
-                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
-                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
-                                    <h6>Nike</h6>
-                                    <div>
-                                        <div class="prix"><p>74.99€</p></div>
-                                        <div class="prix-reduction"><p>44.99€</p></div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
-                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
-                                    <h6>Nike</h6>
-                                    <div>
-                                        <div class="prix"><p>74.99€</p></div>
-                                        <div class="prix-reduction"><p>44.99€</p></div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </section>
                     </section>
                 </section>
                 <footer>
                     <div>
-                        <p>64,99€</p>
-                        <p>34,99 €</p>
+                        <p>{{ produit.prix }} €</p>
+                        <p>{{ produit.prixPromo }} €</p>
                     </div>
                     <div>
                         <a class="btn btn-fondbleu" href="{{ path("choix", {"id": produit.id}) }}">Voir les disponibilités</a>
@@ -185,6 +191,17 @@
      <script>
          $(document).ready(function(){
              changeWish();
+             $("#showMoreCarac").click(function(event){
+                 event.preventDefault();
+                 $("#lessCarac").remove();
+                 $("#moreCarac").show();
+                 $(this).hide();
+             });
+             $("#showMoreComment").click(function(event){
+                 event.preventDefault();
+                 $("#moreComment").show();
+                 $(this).hide();
+             });
              $("h1").click(function(){
                  if(localStorage.getItem("wish") == "0"){
                      localStorage.setItem('wish', "1");
