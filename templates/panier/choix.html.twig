@@ -135,6 +135,40 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
     <script>
+        $(document).ready(function(){
+            $(".btn-primary").hide();
+            $(".choix-taille").find("div").find("div").click(function(){
+                if($(this).hasClass("disabled")){
+                }else{
+                    $(".choix-taille").find("div").find("div").removeClass("active");
+                    $(this).addClass("active")
+                }
+            });
+            $(".changeCouleur").css("border-color", "white");
+            $('.changeCouleur').find("img").each(function(){
+                if($("#mainCouleur").attr("src") == $(this).attr("src")){
+                    $(this).parent().css("border-color", "#164194");
+                }
+            });
+            $(".changeCouleur").click(function(){
+                $(".changeCouleur").css("border-color", "white");
+                $(this).css("border-color", "#164194")
+            });
+            $(".choix-livraison").find("div:first").css({"border": "2px solid white", "cursor": "pointer"});
+            $(".choix-lieu").css({"border": "2px solid white", "cursor": "pointer"});
+            $(".choix-livraison").find("div:first").click(function(){
+                $(".choix-lieu").css("border", "2px solid white");
+                $(this).css("border", "2px solid #164194");
+                $(".btn-primary").show();
+            });
+            $(".choix-lieu").click(function(){
+                $(".choix-livraison").find("div:first").css("border", "2px solid white");
+                $(this).css("border", "2px solid #164194");
+                $(".btn-primary").show();
+            });
+        });
+    </script>
+    <script>
         $('#exampleModal').on('shown.bs.modal', function () {
             var modal = $(this);
             $.ajax('{{ path('popUpProduit') }}', {
