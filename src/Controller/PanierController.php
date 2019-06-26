@@ -108,4 +108,12 @@ class PanierController extends AbstractController
     {
         return $this->render('produit/popUpProduit.html.twig');
     }
+
+    /**
+     * @Route("/produit/add/validate", name="popUpValidation")
+     */
+    public function popUpValidation()
+    {
+        return $this->render('tunel_achat/popUpValidation.html.twig');
+    }
 }

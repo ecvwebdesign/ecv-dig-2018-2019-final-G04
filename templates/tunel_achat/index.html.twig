@@ -36,7 +36,7 @@
                     <input type="text" placeholder="Indiquez votre mot de passe">
                 </section>
                 <section>
-                    <button id="suivantTo2">Se connecter</button>
+                    <button id="suivantTo3">Se connecter</button>
                 </section>
             </div>
         </div>
@@ -79,7 +79,7 @@
                 <div>Flèche</div>
             </div>
         </div>
-        <div class="displayMore">
+        <div class="displayMore" id="monAdresse">
             <div>
                 <div>picto</div>
                 <div>
@@ -100,16 +100,173 @@
             </div>
         </div>
     </section>
+    <section id="step4" style="display: none">
+        <h2>Finaliser ma commande</h2>
+        <div>
+            <p>Récapitulatif de ma commande</p>
+            <table>
+                <tr>
+                    <th>
+                        <p>Sneakers homme Tanjin Se</p>
+                        <span>Couleur: </span><span>Noir</span><span>Taille: </span><span>42</span><span>Qte: </span><span>1</span>
+                    </th>
+                    <th>
+                        <p>44,99€</p>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>Livraison à domicile</p>
+                    </th>
+                    <th>
+                        <p>4,99€</p>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <h3>Choisir un mode de paiement</h3>
+        <div class="displayMore" id="getPaiement">
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Carte bancaire</p>
+                    <span>Visa, Mastercard, Electron</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+            <div class="hide" style="display:none;">
+                <div>
+                    <div>
+                        <p>Titulaire de la carte *</p>
+                        <input type="text" placeholder="Indiquez le nom du titulaire">
+                    </div>
+                    <div>
+                        <div>
+                            <p>Numéro de carte *</p>
+                            <input type="text" placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div>
+                            <p>CVC *</p>
+                            <input type="text" placeholder="000">
+                        </div>
+                    </div>
+                    <div>
+                        <p>Date d'expiration *</p>
+                        <input type="text" placeholder="MM/AA">
+                    </div>
+                </div>
+                <input type="text" placeholder="Indiquez votre adresse mail">
+            </div>
+        </div>
+        <div class="displayMore">
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Paielent en 4 fois sans frais</p>
+                    <span>Visa, Mastercard, Electron</span>
+                </div>
+                <div>Flèche</div>
+            </div>
+        </div>
+        <div class="displayMore">
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Paypal</p>
+                </div>
+                <div>Flèche</div>
+            </div>
+        </div>
+        <div class="displayMore">
+            <div>
+                <div>picto</div>
+                <div>
+                    <p>Carte cadeau intersport</p>
+                </div>
+                <div>Flèche</div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <button style="display: none" id="suivantTo4">Paiement</button>
+        <button style="display: none" class="btn btn-primary" id="suivantTo5" data-toggle="modal" data-target="#exampleModal">Valider ma commande</button>
+    </section>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalTitle">Commande bien enregistré</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
 </article>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
         $(".displayMore").click(function(){
-            $(".hide").css("display","none");
-            $(this).find(".hide").css("display", "block")
+            $(".hide").hide();
+            $(this).find(".hide").toggle();
         });
-        $("#suivantTo2").click(function(){
+        $("#suivantTo3").click(function(){
             $("#step2").hide();
-            $("#step3").show();
+            $("#step3").toggle();
         })
+        $("#suivantTo4").click(function(){
+            $("#suivantTo4").hide();
+            $("#step3").hide();
+            $("#step4").toggle();
+        })
+        $("#monAdresse").click(function(){
+            $("#suivantTo4").show();
+        });
+        $("#getPaiement").click(function(){
+            $("#suivantTo5").show();
+        });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
+        $('#exampleModal').on('shown.bs.modal', function () {
+            var modal = $(this);
+            $.ajax('{{ path('popUpProduit') }}', {
+                success: function(data) {
+                    modal.find('.modal-body').html(data);
+                }
+            });
+        });
+
+        $(document).on('submit', 'form', function(e){
+            e.preventDefault();
+
+            $form = $(e.target);
+            modal = $('#exampleModal');
+
+            var title = $('#article_title').val();
+
+            var $submitButton = $form.find(':submit');
+            $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
+            $submitButton.prop('disabled', true);
+
+            $form.ajaxSubmit({
+                type: 'post',
+                success: function(data) {
+                    if (data == 'ok') {
+                        $('ul').append('<li>' + title + '</li>');
+                        modal.modal('toggle');
+                    } else {
+                        modal.find('.modal-body').html(data);
+                    }
+                },
+                error: function(jqXHR, status, error) {
+                    $submitButton.html(button.data('label'));
+                    $submitButton.prop('disabled', false);
+                }
+            });
+        });
     </script>
 {% endblock %}
