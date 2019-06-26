@@ -1,246 +1,300 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
-<article style="background-color:grey;">
-    <section>
-        <p>01.Panier</p>
-        <p>02.Identification</p>
-        <p>03.Livraison</p>
-        <p>04.Paiement</p>
-    </section>
-    <section id="step2">
-        <h2>Mon compte Intersport</h2>
-        <div class="displayMore">
-            <div>
-                <div>
-                    <p>Je possède déjà un compte</p>
-                    <span>Se connecter</span>
-                </div>
-                <div>Flèche</div>
-            </div>
-            <div class="hide" style="display:none;">
-                <section>
-                    <div>
-                        <p>Email</p>
-                        <div>Picto</div>
+    <main id="main" role="main" class="tunnel-achat">
+        <article>
+            {#            <section class="statement">#}
+            {#                <p>01.Panier</p>#}
+            {#                <p>02.Identification</p>#}
+            {#                <p>03.Livraison</p>#}
+            {#                <p>04.Paiement</p>#}
+            {#            </section>#}
+            <section id="step2">
+                <h2>Mon compte Intersport</h2>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <p>Je possède déjà un compte</p>
+                                <span>Se connecter</span>
+                            </div>
+                        </div>
+                        <div class="hide" style="display:none;">
+                            <section>
+                                <div>
+                                    <label for="email">Email<sup>*</sup></label>
+                                    <input type="text" name="email" placeholder="Indiquez votre adresse mail" required>
+                                </div>
+                                <div>
+                                    <label for="mdp">Mot de passe<sup>*</sup></label>
+                                    <input type="password" name="mdp" placeholder="Indiquez votre mot de passe"
+                                           required>
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                    <input type="text" placeholder="Indiquez votre adresse mail">
-                </section>
-                <section>
-                    <div>
-                        <p>Email</p>
-                        <div>Picto</div>
-                        <span>Mot de passe oublié ?</span>
-                    </div>
-                    <input type="text" placeholder="Indiquez votre mot de passe">
-                </section>
-                <section>
                     <button id="suivantTo3">Se connecter</button>
-                </section>
-            </div>
-        </div>
-        <div class="displayMore">
-            <div>
-                <div>
-                    <p>C'est ma première visite</p>
-                    <span>Créer un compte</span>
                 </div>
-                <div>Flèche</div>
-            </div>
-            <div class="hide" style="display:none;">
-                <div>
-                    <p>Email</p>
-                    <div>Picto</div>
-                </div>
-                <input type="text" placeholder="Indiquez votre adresse mail">
-            </div>
-        </div>
-    </section>
-    <section id="step3" style="display: none">
-        <h2>Mon mode de livraison</h2>
-        <div>
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Retrait en magasin</p>
-                    <span>Gratuit</span>
-                </div>
-                <div>Flèche</div>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Livraison en point relais</p>
-                    <span>à partir de 2,50 €</span>
-                </div>
-                <div>Flèche</div>
-            </div>
-        </div>
-        <div class="displayMore" id="monAdresse">
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Livraison à domicile</p>
-                    <span>à partir de 4,99€</span>
-                </div>
-                <div>Flèche</div>
-            </div>
-            <div class="hide" style="display:none;">
-                <div>
-                    <p>Utiliser mon adresse par défaut</p>
-                    <span>M. Michel Duval</span>
-                    <span>17 Place Paul Doumer</span>
-                    <span>33000 Bordeaux</span>
-                    <p>Modifier l'adresse de livraison</p>
-                </div>
-                <input type="text" placeholder="Indiquez votre adresse mail">
-            </div>
-        </div>
-    </section>
-    <section id="step4" style="display: none">
-        <h2>Finaliser ma commande</h2>
-        <div>
-            <p>Récapitulatif de ma commande</p>
-            <table>
-                <tr>
-                    <th>
-                        <p>Sneakers homme Tanjin Se</p>
-                        <span>Couleur: </span><span>Noir</span><span>Taille: </span><span>42</span><span>Qte: </span><span>1</span>
-                    </th>
-                    <th>
-                        <p>44,99€</p>
-                    </th>
-                </tr>
-                <tr>
-                    <th>
-                        <p>Livraison à domicile</p>
-                    </th>
-                    <th>
-                        <p>4,99€</p>
-                    </th>
-                </tr>
-            </table>
-        </div>
-        <h3>Choisir un mode de paiement</h3>
-        <div class="displayMore" id="getPaiement">
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Carte bancaire</p>
-                    <span>Visa, Mastercard, Electron</span>
-                </div>
-                <div>Flèche</div>
-            </div>
-            <div class="hide" style="display:none;">
-                <div>
-                    <div>
-                        <p>Titulaire de la carte *</p>
-                        <input type="text" placeholder="Indiquez le nom du titulaire">
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <p>C'est ma première visite</p>
+                                <span>Créer un compte</span>
+                            </div>
+                        </div>
+                        <div class="hide" style="display:none;">
+                            <section>
+                                <div>
+                                    <label for="email">Email<sup>*</sup></label>
+                                    <input type="text" name="email" placeholder="Indiquez votre adresse mail" required>
+                                </div>
+                                <div>
+                                    <label for="mdp">Mot de passe<sup>*</sup></label>
+                                    <input type="password" name="mdp" placeholder="Indiquez votre mot de passe"
+                                           required>
+                                </div>
+                            </section>
+                        </div>
                     </div>
+                    <button id="suivantTo3">S'inscrire</button>
+                </div>
+            </section>
+            <section id="step3" style="display: none">
+                <h2>Mon mode de livraison</h2>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/retrait_magasin.png') }}" alt="">
+                                <div>
+                                    <p>Retrait en magasin</p>
+                                    <span>Gratuit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/retrait_point_relais.png') }}" alt="">
+                                <div>
+                                    <p>Livraison en point relais</p>
+                                    <span>à partir de 2,50 €</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="monAdresse" class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/livraison_domicile.png') }}" alt="">
+                                <div>
+                                    <p>Livraison à domicile</p>
+                                    <span>à partir de 4,99€</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide" style="display:none;">
+                            <section>
+                                <div>
+                                    <p>Utiliser mon adresse par défaut</p>
+                                    <span>M. Michel Duval</span>
+                                    <span>17 Place Paul Doumer</span>
+                                    <span>33000 Bordeaux</span>
+                                    <a href="#" class="btn btn-detail">Modifier l'adresse de livraison</a>
+                                </div>
+                                {#                                                        <div>#}
+                                {#                                                            <label for="email">Email<sup>*</sup></label>#}
+                                {#                                                            <input type="text" name="email" placeholder="Indiquez votre adresse mail" required>#}
+                                {#                                                        </div>#}
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <button style="display: none" id="suivantTo4">Paiement</button>
+                </footer>
+            </section>
+            <section id="step4" style="display: none">
+                <h2>Finaliser ma commande</h2>
+                <div class="recap">
+                    <p>Récapitulatif de ma commande</p>
                     <div>
                         <div>
-                            <p>Numéro de carte *</p>
-                            <input type="text" placeholder="0000 0000 0000 0000">
+                            <p>Sneakers homme Tanjun Se</p>
+                            <div>
+                                <p>Couleur : noir</p>
+                                <p>Taille : 42</p>
+                                <p>Qte : 1</p>
+                            </div>
                         </div>
                         <div>
-                            <p>CVC *</p>
-                            <input type="text" placeholder="000">
+                            <p>44.99€</p>
                         </div>
                     </div>
                     <div>
-                        <p>Date d'expiration *</p>
-                        <input type="text" placeholder="MM/AA">
+                        <div>
+                            <p>Livraison à domicile</p>
+                        </div>
+                        <div>
+                            <p>4.99€</p>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div>
+                            <div>
+                                <p>Coût total</p>
+                            </div>
+                            <div>
+                                <p>49.98€</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <input type="text" placeholder="Indiquez votre adresse mail">
-            </div>
-        </div>
-        <div class="displayMore">
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Paielent en 4 fois sans frais</p>
-                    <span>Visa, Mastercard, Electron</span>
+                <h3>Choisir un mode de paiement</h3>
+                <div class="displayMore" id="getPaiement">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/blue_cb.png') }}" alt="">
+                                <div>
+                                    <p>Carte bancaire</p>
+                                    <span>Visa, Mastercard, Electron</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide" style="display:none;">
+                            <section>
+                                <div>
+                                    <label for="titulaire">Titulaire de la carte<sup>*</sup></label>
+                                    <input type="text" name="titulaire" placeholder="Indiquez le nom du titulaire"
+                                           required>
+                                </div>
+                                <div class="numero">
+                                    <label for="numero">Numéro de carte<sup>*</sup></label>
+                                    <input type="text" name="numero" placeholder="0000 0000 0000 0000"
+                                           required>
+                                </div>
+                                <div class="cvc">
+                                    <label for="CVC">CVC<sup>*</sup></label>
+                                    <input type="text" name="CVC" placeholder="000"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="expiration">Date d'expiration<sup>*</sup></label>
+                                    <input type="text" name="expiration" placeholder="MM/AA"
+                                           required>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
                 </div>
-                <div>Flèche</div>
-            </div>
-        </div>
-        <div class="displayMore">
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Paypal</p>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/cb_3x.png') }}" alt="">
+                                <div>
+                                    <p>Paielent en 4 fois sans frais</p>
+                                    <span>Visa, Mastercard, Electron</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>Flèche</div>
-            </div>
-        </div>
-        <div class="displayMore">
-            <div>
-                <div>picto</div>
-                <div>
-                    <p>Carte cadeau intersport</p>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/paypal.png') }}" alt="">
+                                <div>
+                                    <p>Paypal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>Flèche</div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <button style="display: none" id="suivantTo4">Paiement</button>
-        <button style="display: none" class="btn btn-primary" id="suivantTo5" data-toggle="modal" data-target="#exampleModal">Valider ma commande</button>
-    </section>
+                <div class="displayMore">
+                    <div style="padding: 2.5rem;">
+                        <div>
+                            <div>
+                                <img src="{{ asset('assets/images/gift-card.png') }}" alt="">
+                                <div>
+                                    <p>Carte cadeau intersport</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalTitle">Commande bien enregistré</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+
+                <footer>
+                    <button style="display: none" class="btn btn-primary" id="suivantTo5"
+                            data-toggle="modal"
+                            data-target="#exampleModal">Valider ma commande
                     </button>
-                </div>
-                <div class="modal-body">
+                </footer>
+            </section>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img src="{{ asset('assets/images/Achat_done.png') }}" alt="">
+                            <span>REF #32200</span>
+                            <h5 class="modal-title" id="exampleModalTitle">Commande bien enregistré</h5>
+                            <p>Retrouvez tous les détails de votre commande dans votre mail de confirmation ou sous "mes commandes" dans votre espace client.</p>
+                            <button type="button" class="close btn btn-fondbleu" data-dismiss="modal" aria-label="Close">Retour à l'accueil</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</article>
+        </article>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        $(".displayMore").click(function(){
+        $(".displayMore").click(function () {
             $(".hide").hide();
             $(this).find(".hide").toggle();
+            $(this).addClass('active');
+            $(this).find("> div > div:first-of-type").addClass("active");
         });
-        $("#suivantTo3").click(function(){
+        $("#suivantTo3").click(function () {
             $("#step2").hide();
             $("#step3").toggle();
         })
-        $("#suivantTo4").click(function(){
+        $("#suivantTo4").click(function () {
             $("#suivantTo4").hide();
             $("#step3").hide();
             $("#step4").toggle();
         })
-        $("#monAdresse").click(function(){
+        $("#monAdresse").click(function () {
             $("#suivantTo4").show();
         });
-        $("#getPaiement").click(function(){
+        $("#getPaiement").click(function () {
             $("#suivantTo5").show();
         });
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
     <script>
         $('#exampleModal').on('shown.bs.modal', function () {
             var modal = $(this);
             $.ajax('{{ path('popUpProduit') }}', {
-                success: function(data) {
+                success: function (data) {
                     modal.find('.modal-body').html(data);
                 }
             });
         });
 
-        $(document).on('submit', 'form', function(e){
+        $(document).on('submit', 'form', function (e) {
             e.preventDefault();
 
             $form = $(e.target);
@@ -254,7 +308,7 @@
 
             $form.ajaxSubmit({
                 type: 'post',
-                success: function(data) {
+                success: function (data) {
                     if (data == 'ok') {
                         $('ul').append('<li>' + title + '</li>');
                         modal.modal('toggle');
@@ -262,7 +316,7 @@
                         modal.find('.modal-body').html(data);
                     }
                 },
-                error: function(jqXHR, status, error) {
+                error: function (jqXHR, status, error) {
                     $submitButton.html(button.data('label'));
                     $submitButton.prop('disabled', false);
                 }
