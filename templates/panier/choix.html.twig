@@ -14,25 +14,27 @@
     <main id="main" role="main" class="choix">
         <article>
             <header>
-                <img id="mainCouleur" src="{{ produit.image }}" alt="">
-                <p>{{ produit.prix }}€</p>
+                <img id="mainCouleur" src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
+                <p>64,99 €€</p>
                 <div class="reduction">
-                    <p class="btn btn-reduction">33.99€{{ produit.prixPromo }}</p>
+                    <p class="btn btn-reduction">33,99 €</p>
                 </div>
             </header>
             <section>
                 <div class="choix-couleur">
                     <h2>Choisir une couleur</h2>
                     <div>
-                        {% for imageCouleur in couleursImages %}
-                            <div class="changeCouleur">
-                                <img src="{{ imageCouleur }}" alt="">
-                            </div>
-                        {% endfor %}
+                        <div class="changeCouleur">
+                            <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
+                        </div>
+                        <div class="changeCouleur">
+                            <img src="{{ asset('assets/images/Header_produit_02a.png') }}" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="choix-taille">
                     <h2>Choisir une taille</h2>
+                    <span>Guide des tailles</span>
                     <div>
                         <div class="disabled"><p>38</p></div>
                         <div><p>38,5</p></div>
@@ -52,7 +54,7 @@
                     </div>
                 </div>
                 <div class="choix-livraison">
-                    <h2>Choix de livraison</h2>
+                    <h2>Disponibilités</h2>
                     <span>Séléctionner une option</span>
                     <div>
                         <p class="reserver">Réserver en magasin</p>
@@ -122,9 +124,13 @@
                     $("#choiceMagasin").css("display", "block");
                 }
             });
+
+            $("#rechercheMagasin").css("border","2px solid #f3f3f3");
             $("#choiceMagasin").click(function () {
                 $("#rechercheMagasin").val("Intersport Pessac - 33 600");
                 $("#dispoMagasin").text("INDISPONIBLE DANS CE MAGASIN");
+                $("#rechercheMagasin").css("border","2px solid red");
+                $("#dispoMagasin").css("color", "red");
             });
 
         });
@@ -154,16 +160,16 @@
                 $(".changeCouleur").css("border-color", "white");
                 $(this).css("border-color", "#164194")
             });
-            $(".choix-livraison").find("div:first").css({"border": "2px solid white", "cursor": "pointer"});
-            $(".choix-lieu").css({"border": "2px solid white", "cursor": "pointer"});
+            $(".choix-livraison").find("div:first").css({"border": "3px solid white", "cursor": "pointer"});
+            $(".choix-lieu").css({"border": "3px solid white", "cursor": "pointer"});
             $(".choix-livraison").find("div:first").click(function(){
-                $(".choix-lieu").css("border", "2px solid white");
-                $(this).css("border", "2px solid #164194");
+                $(".choix-lieu").css("border", "3px solid white");
+                $(this).css("border", "3px solid #164194");
                 $(".btn-primary").show();
             });
             $(".choix-lieu").click(function(){
-                $(".choix-livraison").find("div:first").css("border", "2px solid white");
-                $(this).css("border", "2px solid #164194");
+                $(".choix-livraison").find("div:first").css("border", "3px solid white");
+                $(this).css("border", "3px solid #164194");
                 $(".btn-primary").show();
             });
         });

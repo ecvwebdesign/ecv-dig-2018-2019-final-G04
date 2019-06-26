@@ -44,20 +44,41 @@
                             </div>
                         </div>
                         <div class="hide" style="display:none;">
-                            <section>
+                            <section id="miniStep1">
+                                <h3>Mes infos personnelles (1/4)</h3>
                                 <div>
-                                    <label for="email">Email<sup>*</sup></label>
-                                    <input type="text" name="email" placeholder="Indiquez votre adresse mail" required>
+                                    <label for="email">Civilité<sup>*</sup></label>
+                                    <div>
+                                        <div>
+                                            <input type="radio" name="mme" value="mme">
+                                            <label for="mme">MME</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="m" value="m">
+                                            <label for="m">M</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <label for="mdp">Mot de passe<sup>*</sup></label>
-                                    <input type="password" name="mdp" placeholder="Indiquez votre mot de passe"
+                                    <label for="nom">Nom<sup>*</sup></label>
+                                    <input type="password" name="nom" placeholder="Indiquez votre nom"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="prenom">Prénom<sup>*</sup></label>
+                                    <input type="password" name="prenom" placeholder="Indiquez votre prénom"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="date">Date de naissance<sup>*</sup></label>
+                                    <input type="password" name="date" placeholder="JJ / MM / AAAA"
                                            required>
                                 </div>
                             </section>
+
                         </div>
                     </div>
-                    <button id="suivantTo3">S'inscrire</button>
+                    <button id="suivantToMiniStep2">Étape suivante (2/4) --></button>
                 </div>
             </section>
             <section id="step3" style="display: none">
@@ -262,7 +283,9 @@
         $(".displayMore").click(function () {
             $(".hide").hide();
             $(this).find(".hide").toggle();
+            $(".displayMore").removeClass("active");
             $(this).addClass('active');
+            $(".displayMore").find("> div > div:first-of-type").removeClass("active");
             $(this).find("> div > div:first-of-type").addClass("active");
         });
         $("#suivantTo3").click(function () {
