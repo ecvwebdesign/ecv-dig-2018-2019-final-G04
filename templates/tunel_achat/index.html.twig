@@ -33,7 +33,7 @@
                             </section>
                         </div>
                     </div>
-                    <button id="suivantTo3">Se connecter</button>
+                    <button id="suivantToRien">Se connecter</button>
                 </div>
                 <div class="displayMore">
                     <div style="padding: 2.5rem;">
@@ -44,41 +44,136 @@
                             </div>
                         </div>
                         <div class="hide" style="display:none;">
-                            <section id="miniStep1">
+                            <section id="miniStep1" class="showbtn">
                                 <h3>Mes infos personnelles (1/4)</h3>
-                                <div>
+                                <div class="radiochoice">
                                     <label for="email">Civilité<sup>*</sup></label>
                                     <div>
                                         <div>
-                                            <input type="radio" name="mme" value="mme">
-                                            <label for="mme">MME</label>
+                                            <input type="radio" name="civilite" value="mme">
+                                            <label for="civilite">MME</label>
                                         </div>
                                         <div>
-                                            <input type="radio" name="m" value="m">
-                                            <label for="m">M</label>
+                                            <input type="radio" name="civilite" value="m">
+                                            <label for="civilite">M</label>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <label for="nom">Nom<sup>*</sup></label>
-                                    <input type="password" name="nom" placeholder="Indiquez votre nom"
+                                    <input type="text" name="nom" placeholder="Indiquez votre nom"
                                            required>
                                 </div>
                                 <div>
                                     <label for="prenom">Prénom<sup>*</sup></label>
-                                    <input type="password" name="prenom" placeholder="Indiquez votre prénom"
+                                    <input type="text" name="prenom" placeholder="Indiquez votre prénom"
+                                           required>
+                                </div>
+                                <div id="datenaissance">
+                                    <label for="date">Date de naissance<sup>*</sup></label>
+                                    <input type="text" name="date" placeholder="JJ / MM / AAAA"
+                                           required>
+                                </div>
+                                <p class="suivantMiniStep" id="suivantToMiniStep2">Étape suivante (2/4) --></p>
+                            </section>
+                            <section id="miniStep2" style="display: none !important;" class="showbtn">
+                                <h3>Mes coordonnées (2/4)</h3>
+                                <div>
+                                    <label for="adresse">Numéro et voie<sup>*</sup></label>
+                                    <input type="text" name="adresse" placeholder="Indiquez votre numéro et nom de rue"
                                            required>
                                 </div>
                                 <div>
-                                    <label for="date">Date de naissance<sup>*</sup></label>
-                                    <input type="password" name="date" placeholder="JJ / MM / AAAA"
+                                    <label for="batiment">Bâtiment, résidence</label>
+                                    <input type="text" name="batiment" placeholder="Indiquez un complément d'adresse"
+                                        >
+                                </div>
+                                <div>
+                                    <label for="lieudit">Lieu dit, BP</label>
+                                    <input type="text" name="lieudit" placeholder="Indiquez un complément d'adresse"
+                                           >
+                                </div>
+                                <div>
+                                    <label for="ville">Ville<sup>*</sup></label>
+                                    <input type="text" name="ville" placeholder="Indiquez votre ville"
+                                           required>
+                                </div>
+                                <div class="inline2">
+                                    <div>
+                                        <label for="postal">Code postal<sup>*</sup></label>
+                                        <input type="text" name="postal" placeholder="00000"
+                                               required>
+                                    </div>
+                                    <div>
+                                        <label for="tel">Téléphone<sup>*</sup></label>
+                                        <input type="text" name="tel" placeholder="00 00 00 00 00"
+                                               required>
+                                    </div>
+                                </div>
+                                <p class="suivantMiniStep" id="suivantToMiniStep3">Étape suivante (3/4) --></p>
+                            </section>
+                            <section id="miniStep3" style="display: none !important;" class="showbtn">
+                                <h3>Mes préférences magasin (3/4)</h3>
+                                <div>
+                                    <label for="localisation">Localisation<sup>*</sup></label>
+                                    <input type="text" name="localisation" placeholder="Indiquez un code postal, une ville"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="magasin">Choisissez votre magasin<sup>*</sup></label>
+                                    <input type="text" name="magasin" placeholder="Sélectionner un magasin"
+                                           required>
+                                </div>
+                                <div class="champNews">
+                                    <label for="newsletter">Acceptez-vous de recevoir des informations de la part d'INTERSPORT et de ses partenaires ?</label>
+                                    <div class="radiochoice">
+                                        <label for="sms">Par sms<sup>*</sup>:</label>
+                                        <div>
+                                            <input type="radio" name="oui" value="Oui">
+                                            <label for="oui">Oui</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="non" value="Non">
+                                            <label for="non">Non</label>
+                                        </div>
+                                        </label>
+                                    </div>
+                                    <div class="radiochoice">
+                                        <label for="mail">Par mail<sup>*</sup>:</label>
+                                        <div>
+                                            <input type="radio" name="oui" value="Oui">
+                                            <label for="oui">Oui</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="non" value="Non">
+                                            <label for="non">Non</label>
+                                        </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button class="suivantMiniStep" id="suivantToMiniStep4">Étape suivante (4/4) --></button>
+                            </section>
+                            <section id="miniStep4" style="display: none !important;" class="showbtn">
+                                <h3>Mes identifiants (4/4)</h3>
+                                <div>
+                                    <label for="mail">Adresse Email<sup>*</sup></label>
+                                    <input type="text" name="mail" placeholder="Indiquez votre email"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="prenom">Mot de passe<sup>*</sup></label>
+                                    <input type="password" name="prenom" placeholder="Choisissez votre mot de passe"
+                                           required>
+                                </div>
+                                <div>
+                                    <label for="prenom">Confirmer votre mot de passe<sup>*</sup></label>
+                                    <input type="password" name="prenom" placeholder="Retapez votre mot de passe"
                                            required>
                                 </div>
                             </section>
-
                         </div>
                     </div>
-                    <button id="suivantToMiniStep2">Étape suivante (2/4) --></button>
+                    <button id="popUpBefore3" style="display:none;">Valider mon inscription</button>
                 </div>
             </section>
             <section id="step3" style="display: none">
@@ -276,10 +371,42 @@
                     </div>
                 </div>
             </div>
+            <div class="modal fade" id="modal2" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img src="{{ asset('assets/images/Achat_done.png') }}" alt="">
+                            <h5 class="modal-title" id="exampleModalTitle">Votre inscription est enregistrée</h5>
+                            <p>Vous allez recevoir un mail de confirmation.</p>
+                            <button id="suivantTo3" type="button" class="close btn btn-fondbleu" data-dismiss="modal" aria-label="Close">Poursuivre mes achats</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </article>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        $("#suivantToMiniStep2").click(function(){
+            $("#miniStep1").removeClass("showbtn");
+            $("#miniStep1").hide();
+           $("#miniStep2").show();
+        });
+        $("#suivantToMiniStep3").click(function(){
+            $("#miniStep2").removeClass("showbtn");
+            $("#miniStep2").hide();
+            $("#miniStep3").show();
+        });
+        $("#suivantToMiniStep4").click(function(){
+            $("#miniStep3").removeClass("showbtn");
+            $("#miniStep3").hide();
+            $("#miniStep4").show();
+            $("#popUpBefore3").show();
+        });
+        $("#popUpBefore3").click(function(){
+           $("#modal2").css("display","inherit")
+        });
         $(".displayMore").click(function () {
             $(".hide").hide();
             $(this).find(".hide").toggle();
@@ -291,6 +418,7 @@
         $("#suivantTo3").click(function () {
             $("#step2").hide();
             $("#step3").toggle();
+            $("#modal2").css("display","none")
         })
         $("#suivantTo4").click(function () {
             $("#suivantTo4").hide();

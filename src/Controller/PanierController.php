@@ -65,8 +65,8 @@ class PanierController extends AbstractController
         ]);
     }
     /**
-     * @Route("/add/{id}/", name="choix")
-     */
+ * @Route("/add/{id}/", name="choix")
+ */
     public function choixProduit($id, Security $security, EntityManagerInterface $manager ){
 
         $produit = $manager->getRepository(Produit::class)->find($id);
@@ -102,6 +102,14 @@ class PanierController extends AbstractController
     }
 
     /**
+     * @Route("/produit/options", name="checkProduit")
+     */
+    public function checkProduit(){
+
+        return $this->render('panier/choix.html.twig');
+    }
+
+    /**
      * @Route("/produit/add", name="popUpProduit")
      */
     public function popUpProduit()
@@ -110,7 +118,7 @@ class PanierController extends AbstractController
     }
 
     /**
-     * @Route("/produit/add/validate", name="popUpValidation")
+     * @Route("/produit/checkproduit", name="popUpValidation")
      */
     public function popUpValidation()
     {

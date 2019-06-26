@@ -1323,67 +1323,69 @@ main {
             #more-article {
                 .slick-slide {
                     padding: 1.5rem;
+                    a{
+                        text-decoration: none;
+                        img {
+                            max-width: 100%;
+                            height: auto;
+                            overflow: hidden;
+                        }
 
-                    img {
-                        max-width: 100%;
-                        height: auto;
-                        overflow: hidden;
-                    }
+                        h5 {
+                            font-family: @family-open;
+                            font-weight: bold;
+                            font-size: 1.1rem;
+                            color: @noir;
+                            margin-bottom: 0;
+                        }
 
-                    h5 {
-                        font-family: @family-open;
-                        font-weight: bold;
-                        font-size: 1.1rem;
-                        color: @noir;
-                        margin-bottom: 0;
-                    }
-
-                    h6 {
-                        font-family: @family-open;
-                        font-size: 1.1rem;
-                        color: #A8A8A7;
-                        margin-top: 0.5rem;
-                        margin-bottom: 0;
-                        text-transform: uppercase;
-                    }
-
-                    > div {
-                        display: flex;
-                        flex-flow: row nowrap;
-                        align-items: center;
+                        h6 {
+                            font-family: @family-open;
+                            font-size: 1.1rem;
+                            color: #A8A8A7;
+                            margin-top: 0.5rem;
+                            margin-bottom: 0;
+                            text-transform: uppercase;
+                        }
 
                         > div {
-                            color: @noir;
-                            font-family: @family-open;
+                            display: flex;
+                            flex-flow: row nowrap;
+                            align-items: center;
 
-                            &:first-of-type {
-                                flex: 1;
+                            > div {
+                                color: @noir;
+                                font-family: @family-open;
 
-                                p {
-                                    display: inline-block;
-                                    position: relative;
+                                &:first-of-type {
+                                    flex: 1;
 
-                                    &::before {
-                                        content: '';
-                                        width: 100%;
-                                        height: 1px;
-                                        background-color: #E60000;
-                                        position: absolute;
-                                        top: 50%;
-                                        bottom: 0;
+                                    p {
+                                        display: inline-block;
+                                        position: relative;
+
+                                        &::before {
+                                            content: '';
+                                            width: 100%;
+                                            height: 1px;
+                                            background-color: #E60000;
+                                            position: absolute;
+                                            top: 50%;
+                                            bottom: 0;
+                                        }
                                     }
                                 }
-                            }
 
-                            &:last-of-type {
-                                p {
-                                    color: #E60000;
-                                    font-weight: bold;
+                                &:last-of-type {
+                                    p {
+                                        color: #E60000;
+                                        font-weight: bold;
+                                    }
                                 }
-                            }
 
-                            p {
-                                font-size: 1.1rem;
+                                p {
+                                    font-size: 1.1rem;
+                                }
                             }
                         }
                     }
@@ -1401,6 +1403,78 @@ main {
             }
 
 
+        }
+    }
+}
+.showbtn{
+    display: block !important;
+}
+#miniStep1, #miniStep2, #miniStep3, #miniStep4{
+    h3{
+        color:#143f90 !important;
+        text-transform: uppercase;
+        font-size:1.9rem;
+        margin: 10px 0 25px !important;
+    }
+    .suivantMiniStep{
+        display: block !important;
+        color: #143f90;
+        background: none;
+        font-size:1.3rem;
+        box-shadow: 0px 0px 0px transparent;
+        border: 0px solid transparent;
+        text-shadow: 0px 0px 0px transparent;
+        text-decoration: underline;
+        text-align: right;
+        margin: 40px 0 0;
+        float: right;
+    }
+    #datenaissance{
+        width: 60%;
+    }
+    .radiochoice {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem !important;
+        input {
+            margin-right: 5px;
+            width: inherit !important;
+        }
+        div {
+            display: flex;
+            margin-right: 35px;
+            div{
+                display: flex;
+                align-items: center;
+
+            }
+        }
+        label{
+            margin: 0 !important;
+        }
+    }
+}
+.inline2{
+    display: flex;
+    justify-content: space-between;
+}
+button, input, optgroup, select, textarea{
+    font-size:1.2rem;
+}
+.champNews{
+    label{
+        font-size:1.4rem;
+        text-transform: inherit !important;
+    }
+    > div{
+        justify-content: inherit !important;
+        margin-top: 2rem !important;
+        label{
+            font-size:1.2rem;
+            text-transform: inherit !important;
+        }
+        div{
+            margin-left: 25px;
         }
     }
 }

@@ -69,30 +69,74 @@
                 </div>
             </section>
             <footer>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Réserver en magasin</button>
+                <button style="display: none" class="btn btn-primary" id="suivantTo5"
+                        data-toggle="modal"
+                        data-target="#exampleModal">Valider ma commande
+                </button>
             </footer>
-        </article>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle"
-             aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalTitle">Article ajouté au panier</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <img src="{{ asset('assets/images/Achat_done.png') }}" alt="">
+                            <span>REF #32200</span>
+                            <h5 class="modal-title" id="exampleModalTitle">Commande bien enregistré</h5>
+                            <p>Retrouvez tous les détails de votre commande dans votre mail de confirmation ou sous "mes commandes" dans votre espace client.</p>
+                            <button type="button" class="close btn btn-fondbleu" data-dismiss="modal" aria-label="Close">Retour à l'accueil</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
+
     </main>
     </body>
 {% endblock %}
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+    <script>
+        $('#exampleModal').on('shown.bs.modal', function () {
+            var modal = $(this);
+            $.ajax('{{ path('popUpValidation') }}', {
+                success: function (data) {
+                    modal.find('.modal-body').html(data);
+                }
+            });
+        });
+
+        $(document).on('submit', 'form', function (e) {
+            e.preventDefault();
+
+            $form = $(e.target);
+            modal = $('#exampleModal');
+
+            var title = $('#article_title').val();
+
+            var $submitButton = $form.find(':submit');
+            $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
+            $submitButton.prop('disabled', true);
+
+            $form.ajaxSubmit({
+                type: 'post',
+                success: function (data) {
+                    if (data == 'ok') {
+                        $('ul').append('<li>' + title + '</li>');
+                        modal.modal('toggle');
+                    } else {
+                        modal.find('.modal-body').html(data);
+                    }
+                },
+                error: function (jqXHR, status, error) {
+                    $submitButton.html(button.data('label'));
+                    $submitButton.prop('disabled', false);
+                }
+            });
+        });
+    </script>
     <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
     <script>
         $(document).ready(function () {
@@ -135,11 +179,6 @@
 
         });
     </script>
-    {{ parent() }}
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
     <script>
         $(document).ready(function(){
             $(".btn-primary").hide();
@@ -174,43 +213,5 @@
             });
         });
     </script>
-    <script>
-        $('#exampleModal').on('shown.bs.modal', function () {
-            var modal = $(this);
-            $.ajax('{{ path('popUpProduit') }}', {
-                success: function (data) {
-                    modal.find('.modal-body').html(data);
-                }
-            });
-        });
 
-        $(document).on('submit', 'form', function (e) {
-            e.preventDefault();
-
-            $form = $(e.target);
-            modal = $('#exampleModal');
-
-            var title = $('#article_title').val();
-
-            var $submitButton = $form.find(':submit');
-            $submitButton.html('<i class="fas fa-spinner fa-pulse"></i>');
-            $submitButton.prop('disabled', true);
-
-            $form.ajaxSubmit({
-                type: 'post',
-                success: function (data) {
-                    if (data == 'ok') {
-                        $('ul').append('<li>' + title + '</li>');
-                        modal.modal('toggle');
-                    } else {
-                        modal.find('.modal-body').html(data);
-                    }
-                },
-                error: function (jqXHR, status, error) {
-                    $submitButton.html(button.data('label'));
-                    $submitButton.prop('disabled', false);
-                }
-            });
-        });
-    </script>
 {% endblock %}
