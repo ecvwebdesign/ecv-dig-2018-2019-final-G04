@@ -6,15 +6,15 @@
                 <header>
                     <div id="slider-singleproduit">
                         <div>
-                            <img src="{{ produit.image }}" alt="">
+                            <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
                             <div class="reduction">
-                                <p class="btn btn-reduction">- {{ reduction }} %</p>
+                                <p class="btn btn-reduction">- 47 %</p>
                             </div>
                         </div>
                         <div>
                             <img src="{{ asset('assets/images/Header_produit_01b.png') }}" alt="">
                             <div class="reduction">
-                                <p class="btn btn-reduction">- {{ reduction }} %</p>
+                                <p class="btn btn-reduction">- 47 %</p>
                             </div>
                         </div>
                     </div>
@@ -28,8 +28,8 @@
                                 <div></div>
                             </div>
                         </div>
-                        <h1>{{ produit.libelle }}</h1>
-                        <h3>{{ produitType.marque }}</h3>
+                        <h1>Sneakers homme Tanjun Se</h1>
+                        <h3>Nike</h3>
                         <div class="etoile">
                             <div>
                                 <img src="{{ asset('assets/images/icone_star_plein.png') }}" alt="">
@@ -52,26 +52,18 @@
                         <section class="caracteristique">
                             <h2>CARACTERISTIQUES</h2>
                             <table>
-                                {% if produitType.composition %}
                                     <tr>
                                         <th>Composition</th>
-                                        <th>{{ produitType.composition }}</th>
+                                        <th>Coton</th>
                                     </tr>
-                                {% endif %}
                                 <tr>
                                     <th>Couleurs</th>
-                                    <th>
-                                        {% for sameProduit in allProduitType %}
-                                            {{ sameProduit.couleur }}
-                                        {% endfor %}
-                                    </th>
+                                    <th>Gris anthracite, bordeaux</th>
                                 </tr>
-                                {% if produitType.poids %}
                                     <tr>
                                         <th>Poids</th>
-                                        <th>{{ produitType.poids }}</th>
+                                        <th>300 grammes</th>
                                     </tr>
-                                {% endif %}
                                 <tr id="lessCarac">
                                     <th>...</th>
                                     <th>...</th>
@@ -161,25 +153,41 @@
                         <section class="more-article">
                             <h2>Vous aimerez aussi</h2>
                             <div id="more-article">
-                                {% for test in allProduitType %}
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_03.png') }}" alt="">
+                                    <h5>Sneakers homme Air Pegasus</h5>
+                                    <h6>NIKE</h6>
                                     <div>
-                                        <img src="{{ test.image }}" alt="">
-                                        <h5>{{ test.libelle }}</h5>
-                                        <h6>{{ test.produitType.marque }}</h6>
-                                        <div>
-                                            <div class="prix"><p>{{ test.prix }} €</p></div>
-                                            <div class="prix-reduction"><p>{{ test.prixPromo }} €</p></div>
-                                        </div>
+                                        <div class="prix"><p>74,99 €</p></div>
+                                        <div class="prix-reduction"><p>44,99 €</p></div>
                                     </div>
-                                {% endfor %}
+                                </div>
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_02.png') }}" alt="">
+                                    <h5>Sneakers homme Nightgazer</h5>
+                                    <h6>NIKE</h6>
+                                    <div>
+                                        <div class="prix"><p>74,99 €</p></div>
+                                        <div class="prix-reduction"><p>44,99 €</p></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="{{ asset('assets/images/Produit_similaire_01.png') }}" alt="">
+                                    <h5>Veste à capuche homme Sportswear Ft Statement</h5>
+                                    <h6>NIKE</h6>
+                                    <div>
+                                        <div class="prix"><p>74,99 €</p></div>
+                                        <div class="prix-reduction"><p>44,99 €</p></div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </section>
                 </section>
                 <footer>
                     <div>
-                        <p>{{ produit.prix }} €</p>
-                        <p>{{ produit.prixPromo }} €</p>
+                        <p>64,99 €</p>
+                        <p>33,99 €</p>
                     </div>
                     <div>
                         <a class="btn btn-fondbleu" href="{{ path("choix", {"id": produit.id}) }}">Voir les disponibilités</a>
