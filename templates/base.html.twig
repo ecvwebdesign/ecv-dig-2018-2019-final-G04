@@ -11,6 +11,30 @@
         <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     {% endblock %}
+    <style>
+        #panierRond{
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 25px;
+            bottom: 0px;
+            padding: 3px 5px;
+            font-size: 1rem;
+            display: none;
+        }
+        #coeurRond{
+            display: none;
+            padding: 3px 5px;
+            background-color: red;
+            color: red;
+            border-radius: 50%;
+            font-size: 1rem;
+            position: absolute;
+            left: 25px;
+            bottom: 0px;
+        }
+    </style>
 </head>
 <body>
 {% block header %}

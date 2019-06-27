@@ -242,28 +242,6 @@ main .slick-slider ul.slick-dots li button {
 main .slick-slider ul.slick-dots li.slick-active::before {
   background-color: #979797;
 }
-main #panierRond {
-  background-color: red;
-  color: white;
-  border-radius: 50%;
-  position: absolute;
-  left: 25px;
-  bottom: 0px;
-  padding: 3px 5px;
-  font-size: 1rem;
-  display: none;
-}
-main #coeurRond {
-  display: none;
-  padding: 3px 5px;
-  background-color: red;
-  color: red;
-  border-radius: 50%;
-  font-size: 1rem;
-  position: absolute;
-  left: 25px;
-  bottom: 0px;
-}
 main.singleproduit > article > header #slider-singleproduit img {
   width: 100%;
   height: auto;
@@ -1341,7 +1319,6 @@ main.homepage .section6 h2 {
   font-weight: lighter;
   line-height: 1.3;
   padding-left: 1.5rem;
-  text-align: center;
 }
 main.homepage .section6 > a {
   text-transform: uppercase;
