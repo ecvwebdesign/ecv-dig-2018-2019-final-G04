@@ -829,7 +829,7 @@ main {
                     font-weight: lighter;
                 }
 
-                &#step2, &#step3, &#step4 {
+                &#step1, &#step2, &#step3, &#step4 {
                     .displayMore {
                         background-color: @blanc;
                         -webkit-border-radius: 15px;
@@ -974,6 +974,203 @@ main {
                         font-weight: bold;
                         font-size: 1.6rem;
                         margin-top: 3rem;
+                    }
+                }
+
+                &#step1 {
+                    article {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        align-items: center;
+
+                        > div {
+                            &:first-child {
+                                width: 40%;
+                            }
+
+                            img {
+                                max-width: 100%;
+                            }
+
+                            h3 {
+                                font-weight: bold;
+                                margin: 0;
+                            }
+
+                            > span {
+                                color: #a8a8a7;
+                                text-transform: uppercase;
+                                margin: 0.5rem 0;
+                                display: block;
+                            }
+
+                            > div {
+                                &:first-of-type {
+                                    display: flex;
+                                    flex-flow: row nowrap;
+                                    align-items: center;
+
+                                    > p {
+                                        color: @noir;
+                                        position: relative;
+                                        margin: 0;
+
+                                        &::after {
+                                            content: '';
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 0;
+                                            width: 100%;
+                                            height: 1px;
+                                            background-color: #e60000;
+                                        }
+                                    }
+
+                                    > span {
+                                        margin-left: 1.5rem;
+                                        color: #E60000;
+                                        font-weight: bold;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    display: flex;
+                                    flex-flow: row nowrap;
+                                    align-items: center;
+                                    margin-top: 1rem;
+
+                                    > span {
+                                        border: 2px solid #a8a8a7;
+                                        -webkit-border-radius: 5px;
+                                        -moz-border-radius: 5px;
+                                        border-radius: 5px;
+                                        width: 30px;
+                                        height: 30px;
+                                        color: #292f4e;
+                                        font-size: 1.4rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+
+                                    > p {
+                                        color: #292f4e;
+                                        margin: 0 1.5rem;
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                            > p {
+                                color: @noir;
+                                margin: 0;
+
+                                > span {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+
+                    .code-reduction {
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-content: center;
+
+                        > p {
+                            text-transform: uppercase;
+                            color: #4d4d4d;
+                            font-size: 1.4rem;
+                            margin-bottom: 0.5rem;
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            align-content: center;
+                            width: 100%;
+
+                            input {
+                                width: 70%;
+                                border: none;
+                                display: inline-block;
+                                padding: 0 5px;
+                            }
+
+                            button {
+                                width: 30%;
+                                -webkit-border-radius: 0 60px 60px 0;
+                                -moz-border-radius: 0 60px 60px 0;
+                                border-radius: 0 60px 60px 0;
+                                color: @blanc;
+                                font-weight: bold;
+                                background-color: #292f4e;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    .recap-commande {
+                        background-color: @blanc;
+                        padding: 1.5rem 2rem;
+                        margin-top: 3rem;
+
+                        h4 {
+                            color: #143f90;
+                            text-transform: uppercase;
+                            font-size: 1.8rem;
+                            font-weight: lighter;
+                            margin: 0;
+                        }
+
+                        > div {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            p, span {
+                                color: @noir;
+                                font-weight: bold;
+                                margin-top: 1rem;
+                                margin-bottom: 2rem;
+                            }
+                        }
+                    }
+
+                    .payer {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 3rem;
+
+                        p{
+                            text-transform: uppercase;
+                            font-size: 1.4rem;
+                            color: #4d4d4d;
+                            font-weight: bold;
+                        }
+
+                        a {
+                            -webkit-border-radius: 60px;
+                            -moz-border-radius: 60px;
+                            border-radius: 60px;
+                            text-decoration: none;
+
+                            &:last-of-type{
+                                background-color: #292f4e;
+                            }
+                        }
+                    }
+
+                    > div{
+                        &:last-of-type{
+                            p{
+                                text-align: left;
+                                font-size: 1.4rem;
+                            }
+                        }
                     }
                 }
 

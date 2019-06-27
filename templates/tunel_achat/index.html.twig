@@ -9,41 +9,46 @@
             <section id="step1">
                 <h2>Mon panier</h2>
                 <article>
-                    <h3>Sneakers homme Tanjun Se</h3>
-                    <span>Nike</span>
                     <div>
-                        <p class="oldPrice">64,99 €</p>
-                        <span class="newPrice">33,99 €</span>
+                        <img src="{{ asset('assets/images/Header_produit_01a.png') }}" alt="">
                     </div>
-                    <p>Couleur : <span>Noir</span>Taille : <span>42</span></p>
                     <div>
-                        <span id="less">-</span>
-                        <p id="quantity" type="text">1</p>
-                        <span id="more">+</span>
-                        <img src="" alt="">
+                        <h3>Sneakers homme Tanjun Se</h3>
+                        <span>Nike</span>
+                        <div>
+                            <p class="oldPrice">64,99 €</p>
+                            <span class="newPrice">33,99 €</span>
+                        </div>
+                        <p>Couleur : <span>Noir</span>&nbsp;&nbsp;&nbsp;Taille : <span>42</span></p>
+                        <div>
+                            <span id="less">-</span>
+                            <p id="quantity" type="text">1</p>
+                            <span id="more">+</span>
+                            <img src="" alt="">
+                        </div>
                     </div>
                 </article>
-                <div>
+                <div class="code-reduction">
                     <p>J'ai un code de réduction</p>
                     <div>
                         <input type="text" placeholder="REDUC50">
-                        <input type="submit">
+                        <button type="submit" class="btn btn-fondbleu">Ajouter</button>
                     </div>
                 </div>
-                <div>
+                <div class="recap-commande">
                     <h4>Total commande</h4>
                     <div>
                         <p>1 article</p>
                         <span class="newPrice">33,99 €</span>
                     </div>
                 </div>
-                <div>
-                    <button id="suivantTo2">Payer en ligne</button>
+                <div class="payer">
+                    <button id="suivantTo2" href="" class="btn btn-fondbleu">Payer en ligne</button>
                     <p>ou</p>
-                    <a href="">Réserver en magasin</a>
+                    <a href="" class="btn btn-fondbleu">Réserver en magasin</a>
                 </div>
                 <div>
-                    <p>< Continuer mes achats</p>
+                    <p class="btn btn-detail">< Continuer mes achats</p>
                 </div>
             </section>
             <section id="step2" style="display: none;">
