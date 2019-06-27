@@ -144,6 +144,9 @@ main .h5 {
   font-family: Helvetica, Arial, sans-serif;
   display: block;
 }
+main #etapes {
+  text-align: center;
+}
 main h1,
 main .h1 {
   font-size: 3.4rem;
@@ -1113,11 +1116,16 @@ main.tunnel-achat > article > section#step1 .payer p {
   color: #4d4d4d;
   font-weight: bold;
 }
-main.tunnel-achat > article > section#step1 .payer a {
+main.tunnel-achat > article > section#step1 .payer button {
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
   border-radius: 60px;
+}
+main.tunnel-achat > article > section#step1 .payer a {
   text-decoration: none;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
 }
 main.tunnel-achat > article > section#step1 .payer a:last-of-type {
   background-color: #292f4e;
