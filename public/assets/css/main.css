@@ -798,6 +798,7 @@ main.tunnel-achat > article > section h2 {
   color: #164194;
   font-weight: lighter;
 }
+main.tunnel-achat > article > section#step1 .displayMore,
 main.tunnel-achat > article > section#step2 .displayMore,
 main.tunnel-achat > article > section#step3 .displayMore,
 main.tunnel-achat > article > section#step4 .displayMore {
@@ -809,6 +810,7 @@ main.tunnel-achat > article > section#step4 .displayMore {
   position: relative;
   overflow: hidden;
 }
+main.tunnel-achat > article > section#step1 .displayMore > div > div,
 main.tunnel-achat > article > section#step2 .displayMore > div > div,
 main.tunnel-achat > article > section#step3 .displayMore > div > div,
 main.tunnel-achat > article > section#step4 .displayMore > div > div {
@@ -816,6 +818,7 @@ main.tunnel-achat > article > section#step4 .displayMore > div > div {
   flex-flow: row wrap;
   align-items: center;
 }
+main.tunnel-achat > article > section#step1 .displayMore > div > div.active::after,
 main.tunnel-achat > article > section#step2 .displayMore > div > div.active::after,
 main.tunnel-achat > article > section#step3 .displayMore > div > div.active::after,
 main.tunnel-achat > article > section#step4 .displayMore > div > div.active::after {
@@ -826,6 +829,7 @@ main.tunnel-achat > article > section#step4 .displayMore > div > div.active::aft
   background-color: #000000;
   margin: 2rem 0;
 }
+main.tunnel-achat > article > section#step1 .displayMore > div > div > div::after,
 main.tunnel-achat > article > section#step2 .displayMore > div > div > div::after,
 main.tunnel-achat > article > section#step3 .displayMore > div > div > div::after,
 main.tunnel-achat > article > section#step4 .displayMore > div > div > div::after {
@@ -842,6 +846,7 @@ main.tunnel-achat > article > section#step4 .displayMore > div > div > div::afte
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+main.tunnel-achat > article > section#step1 .displayMore > div > div > div > p,
 main.tunnel-achat > article > section#step2 .displayMore > div > div > div > p,
 main.tunnel-achat > article > section#step3 .displayMore > div > div > div > p,
 main.tunnel-achat > article > section#step4 .displayMore > div > div > div > p {
@@ -851,6 +856,7 @@ main.tunnel-achat > article > section#step4 .displayMore > div > div > div > p {
   margin: 0;
   margin-bottom: 1rem;
 }
+main.tunnel-achat > article > section#step1 .displayMore > div > div > div > span,
 main.tunnel-achat > article > section#step2 .displayMore > div > div > div > span,
 main.tunnel-achat > article > section#step3 .displayMore > div > div > div > span,
 main.tunnel-achat > article > section#step4 .displayMore > div > div > div > span {
@@ -858,11 +864,13 @@ main.tunnel-achat > article > section#step4 .displayMore > div > div > div > spa
   text-transform: uppercase;
   font-family: 'open_sansregular';
 }
+main.tunnel-achat > article > section#step1 .displayMore button,
 main.tunnel-achat > article > section#step2 .displayMore button,
 main.tunnel-achat > article > section#step3 .displayMore button,
 main.tunnel-achat > article > section#step4 .displayMore button {
   display: none;
 }
+main.tunnel-achat > article > section#step1 .displayMore.active > button,
 main.tunnel-achat > article > section#step2 .displayMore.active > button,
 main.tunnel-achat > article > section#step3 .displayMore.active > button,
 main.tunnel-achat > article > section#step4 .displayMore.active > button {
@@ -874,6 +882,7 @@ main.tunnel-achat > article > section#step4 .displayMore.active > button {
   color: #ffffff;
   font-weight: bold;
 }
+main.tunnel-achat > article > section#step1 .hide > section,
 main.tunnel-achat > article > section#step2 .hide > section,
 main.tunnel-achat > article > section#step3 .hide > section,
 main.tunnel-achat > article > section#step4 .hide > section {
@@ -882,12 +891,14 @@ main.tunnel-achat > article > section#step4 .hide > section {
   align-items: center;
   width: 100%;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div,
 main.tunnel-achat > article > section#step2 .hide > section > div,
 main.tunnel-achat > article > section#step3 .hide > section > div,
 main.tunnel-achat > article > section#step4 .hide > section > div {
   margin-bottom: 1.5rem;
   width: 100%;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div label,
 main.tunnel-achat > article > section#step2 .hide > section > div label,
 main.tunnel-achat > article > section#step3 .hide > section > div label,
 main.tunnel-achat > article > section#step4 .hide > section > div label {
@@ -897,12 +908,14 @@ main.tunnel-achat > article > section#step4 .hide > section > div label {
   font-family: 'open_sansregular';
   margin-bottom: 1rem;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div label sup,
 main.tunnel-achat > article > section#step2 .hide > section > div label sup,
 main.tunnel-achat > article > section#step3 .hide > section > div label sup,
 main.tunnel-achat > article > section#step4 .hide > section > div label sup {
   color: #164091;
   font-weight: bold;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div input,
 main.tunnel-achat > article > section#step2 .hide > section > div input,
 main.tunnel-achat > article > section#step3 .hide > section > div input,
 main.tunnel-achat > article > section#step4 .hide > section > div input {
@@ -914,6 +927,7 @@ main.tunnel-achat > article > section#step4 .hide > section > div input {
   border: none;
   padding: 1rem 0;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div input::placeholder,
 main.tunnel-achat > article > section#step2 .hide > section > div input::placeholder,
 main.tunnel-achat > article > section#step3 .hide > section > div input::placeholder,
 main.tunnel-achat > article > section#step4 .hide > section > div input::placeholder {
@@ -921,11 +935,13 @@ main.tunnel-achat > article > section#step4 .hide > section > div input::placeho
   font-family: 'open_sansregular';
   padding-left: 1.5rem;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div > p,
 main.tunnel-achat > article > section#step2 .hide > section > div > p,
 main.tunnel-achat > article > section#step3 .hide > section > div > p,
 main.tunnel-achat > article > section#step4 .hide > section > div > p {
   font-weight: bold;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div > a,
 main.tunnel-achat > article > section#step2 .hide > section > div > a,
 main.tunnel-achat > article > section#step3 .hide > section > div > a,
 main.tunnel-achat > article > section#step4 .hide > section > div > a {
@@ -934,11 +950,13 @@ main.tunnel-achat > article > section#step4 .hide > section > div > a {
   font-size: 1.6rem;
   margin-bottom: 0;
 }
+main.tunnel-achat > article > section#step1 .hide > section > div > span,
 main.tunnel-achat > article > section#step2 .hide > section > div > span,
 main.tunnel-achat > article > section#step3 .hide > section > div > span,
 main.tunnel-achat > article > section#step4 .hide > section > div > span {
   display: block;
 }
+main.tunnel-achat > article > section#step1 h3,
 main.tunnel-achat > article > section#step2 h3,
 main.tunnel-achat > article > section#step3 h3,
 main.tunnel-achat > article > section#step4 h3 {
@@ -947,6 +965,166 @@ main.tunnel-achat > article > section#step4 h3 {
   font-weight: bold;
   font-size: 1.6rem;
   margin-top: 3rem;
+}
+main.tunnel-achat > article > section#step1 article {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.tunnel-achat > article > section#step1 article > div:first-child {
+  width: 40%;
+}
+main.tunnel-achat > article > section#step1 article > div img {
+  max-width: 100%;
+}
+main.tunnel-achat > article > section#step1 article > div h3 {
+  font-weight: bold;
+  margin: 0;
+}
+main.tunnel-achat > article > section#step1 article > div > span {
+  color: #a8a8a7;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+  display: block;
+}
+main.tunnel-achat > article > section#step1 article > div > div:first-of-type {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+main.tunnel-achat > article > section#step1 article > div > div:first-of-type > p {
+  color: #000000;
+  position: relative;
+  margin: 0;
+}
+main.tunnel-achat > article > section#step1 article > div > div:first-of-type > p::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e60000;
+}
+main.tunnel-achat > article > section#step1 article > div > div:first-of-type > span {
+  margin-left: 1.5rem;
+  color: #E60000;
+  font-weight: bold;
+}
+main.tunnel-achat > article > section#step1 article > div > div:last-of-type {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 1rem;
+}
+main.tunnel-achat > article > section#step1 article > div > div:last-of-type > span {
+  border: 2px solid #a8a8a7;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  color: #292f4e;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main.tunnel-achat > article > section#step1 article > div > div:last-of-type > p {
+  color: #292f4e;
+  margin: 0 1.5rem;
+  font-weight: bold;
+}
+main.tunnel-achat > article > section#step1 article > div > p {
+  color: #000000;
+  margin: 0;
+}
+main.tunnel-achat > article > section#step1 article > div > p > span {
+  font-weight: bold;
+}
+main.tunnel-achat > article > section#step1 .code-reduction {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+}
+main.tunnel-achat > article > section#step1 .code-reduction > p {
+  text-transform: uppercase;
+  color: #4d4d4d;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+main.tunnel-achat > article > section#step1 .code-reduction > div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  width: 100%;
+}
+main.tunnel-achat > article > section#step1 .code-reduction > div input {
+  width: 70%;
+  border: none;
+  display: inline-block;
+  padding: 0 5px;
+}
+main.tunnel-achat > article > section#step1 .code-reduction > div button {
+  width: 30%;
+  -webkit-border-radius: 0 60px 60px 0;
+  -moz-border-radius: 0 60px 60px 0;
+  border-radius: 0 60px 60px 0;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #292f4e;
+  text-transform: uppercase;
+}
+main.tunnel-achat > article > section#step1 .recap-commande {
+  background-color: #ffffff;
+  padding: 1.5rem 2rem;
+  margin-top: 3rem;
+}
+main.tunnel-achat > article > section#step1 .recap-commande h4 {
+  color: #143f90;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: lighter;
+  margin: 0;
+}
+main.tunnel-achat > article > section#step1 .recap-commande > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+main.tunnel-achat > article > section#step1 .recap-commande > div p,
+main.tunnel-achat > article > section#step1 .recap-commande > div span {
+  color: #000000;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+main.tunnel-achat > article > section#step1 .payer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+main.tunnel-achat > article > section#step1 .payer p {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+main.tunnel-achat > article > section#step1 .payer a {
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  text-decoration: none;
+}
+main.tunnel-achat > article > section#step1 .payer a:last-of-type {
+  background-color: #292f4e;
+}
+main.tunnel-achat > article > section#step1 > div:last-of-type p {
+  text-align: left;
+  font-size: 1.4rem;
 }
 main.tunnel-achat > article > section#step3 .displayMore.active,
 main.tunnel-achat > article > section#step4 .displayMore.active {
