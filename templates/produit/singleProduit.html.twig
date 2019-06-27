@@ -198,7 +198,6 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <script>
          $(document).ready(function(){
-             changeWish();
              $("#showMoreCarac").click(function(event){
                  event.preventDefault();
                  $("#lessCarac").remove();
@@ -219,11 +218,12 @@
                      changeWish()
                  }
              });
+             changeWish();
              function changeWish(){
                  if (localStorage.getItem("wish") == "1") {
-                     $("#wish").css("display", "block")
+                     $("#coeurRond").css("display", "block")
                  }else{
-                     $("#wish").css("display", "none")
+                     $("#coeurRond").css("display", "none")
                  }
              }
          });

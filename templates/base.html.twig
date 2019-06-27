@@ -23,7 +23,8 @@
         <div>
             <ul>
                 <li><a href="#"><img src="{{ asset('assets/images/menu-loupe.png') }}" alt="Icon de recherche"></a></li>
-                <li><a href="#"><img src="{{ asset('assets/images/menu_fav.png') }}" alt="Icon liste de favoris"></a><span id="wish" style="display:none;"><img src="{{ asset('assets/images/menu_fav_rouge.png') }}" alt="Icon liste de favoris"></span></li>                <li><a href="#"><img src="{{ asset('assets/images/menu_bag.png') }}" alt="Icon panier"></a></li>
+                <li><a href="#"><img src="{{ asset('assets/images/menu_fav.png') }}" alt="Icon liste de favoris"></a><div id="coeurRond">1</div></li>
+                <li><a href="#"><img src="{{ asset('assets/images/menu_bag.png') }}" alt="Icon panier"></a><div id="panierRond">1</div></li>
             </ul>
             <nav>
                 <button aria-pressed="false" type="button" class="menu-burger" id="menu-button" tabindex="1"><span
@@ -57,11 +58,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/javascript/global.js') }}"></script>
-    <script>
-        $(document).ready(function(){
-
-        });
-    </script>
 {% endblock %}
 </body>
 </html>

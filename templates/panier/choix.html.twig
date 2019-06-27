@@ -6,6 +6,25 @@
 {#          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">#}
     <link rel="stylesheet" href="{{ asset('assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <style>
+        .proposition{
+            background-color: white;
+            padding: 10px 10px;
+            border-radius: 0 0 5px 5px;
+            margin-top: -1px;
+            margin-left: 4px;
+            z-index: 10;
+            color: #aeaead;
+            font-family: 'open_sansregular';
+        }
+        .proposition:hover{
+            background-color:#aeaead;
+            color:white;
+        }
+        #modalChoix{
+            display: none;
+        }
+    </style>
 {% endblock %}
 {% block title %}Panier{% endblock %}
 
@@ -59,7 +78,7 @@
                     <div>
                         <p class="reserver">Réserver en magasin</p>
                         <div class="input"><input id="rechercheMagasin" type="text"></div>
-                        <div id="choiceMagasin" style="display:none;"><p>Intersport Pessac - 33 600</p></div>
+                        <div id="choiceMagasin" style="display:none;"><p class="proposition">Intersport Pessac - 33 600</p></div>
                         <p id="dispoMagasin">Disponible</p>
                     </div>
                 </div>
@@ -69,27 +88,14 @@
                 </div>
             </section>
             <footer>
-                <button style="display: none" class="btn btn-primary" id="suivantTo5"
-                        data-toggle="modal"
-                        data-target="#exampleModal">Valider ma commande
-                </button>
+                <a href="{{ path("panier") }}">
+                    <button style="display: none" class="btn btn-primary" id="suivantTo5"
+                            data-toggle="modal"
+                            data-target="#exampleModal">Valider ma commande
+                    </button>
+                </a>
             </footer>
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <img src="{{ asset('assets/images/Achat_done.png') }}" alt="">
-                            <span>REF #32200</span>
-                            <h5 class="modal-title" id="exampleModalTitle">Commande bien enregistré</h5>
-                            <p>Retrouvez tous les détails de votre commande dans votre mail de confirmation ou sous "mes commandes" dans votre espace client.</p>
-                            <button type="button" class="close btn btn-fondbleu" data-dismiss="modal" aria-label="Close">Retour à l'accueil</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </article>
-
     </main>
     </body>
 {% endblock %}
@@ -99,6 +105,24 @@
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script>
+        $("#suivantTo5").click(function(){
+            $("#modalChoix").css("display", "block")
+            if(localStorage.getItem("panier") == "0"){
+                localStorage.setItem('panier', "1");
+                changePanier()
+            }else{
+                localStorage.setItem('panier', "0");
+                changePanier()
+            }
+        });
+        changePanier();
+        function changePanier(){
+            if (localStorage.getItem("panier") == "1") {
+                $("#panierRond").css("display", "block")
+            }else{
+                $("#panierRond").css("display", "none")
+            }
+        }
         $('#exampleModal').on('shown.bs.modal', function () {
             var modal = $(this);
             $.ajax('{{ path('popUpValidation') }}', {
@@ -181,6 +205,22 @@
     </script>
     <script>
         $(document).ready(function(){
+            changePanier();
+            function changePanier(){
+                if (localStorage.getItem("panier") == "1") {
+                    $("#panierRond").css("display", "block")
+                }else{
+                    $("#panierRond").css("display", "none")
+                }
+            }
+            changeWish();
+            function changeWish(){
+                if (localStorage.getItem("wish") == "1") {
+                    $("#coeurRond").css("display", "block")
+                }else{
+                    $("#coeurRond").css("display", "none")
+                }
+            }
             $(".btn-primary").hide();
             $(".choix-taille").find("div").find("div").click(function(){
                 if($(this).hasClass("disabled")){

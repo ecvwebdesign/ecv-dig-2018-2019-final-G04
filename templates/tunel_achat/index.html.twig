@@ -388,6 +388,22 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+        changePanier();
+        function changePanier(){
+            if (localStorage.getItem("panier") == "1") {
+                $("#panierRond").css("display", "block")
+            }else{
+                $("#panierRond").css("display", "none")
+            }
+        }
+        changeWish();
+        function changeWish(){
+            if (localStorage.getItem("wish") == "1") {
+                $("#coeurRond").css("display", "block")
+            }else{
+                $("#coeurRond").css("display", "none")
+            }
+        }
         $("#suivantToMiniStep2").click(function(){
             $("#miniStep1").removeClass("showbtn");
             $("#miniStep1").hide();
