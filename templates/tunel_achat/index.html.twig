@@ -3,13 +3,10 @@
 {% block body %}
     <main id="main" role="main" class="tunnel-achat">
         <article>
-            {#            <section class="statement">#}
-            {#                <p>01.Panier</p>#}
-            {#                <p>02.Identification</p>#}
-            {#                <p>03.Livraison</p>#}
-            {#                <p>04.Paiement</p>#}
-            {#            </section>#}
-            <section>
+<section id="etapes">
+    <img src="{{ asset('assets/images/etape1.png') }}" alt="">
+</section>
+            <section id="step1">
                 <h2>Mon panier</h2>
                 <article>
                     <h3>Sneakers homme Tanjun Se</h3>
@@ -41,7 +38,7 @@
                     </div>
                 </div>
                 <div>
-                    <a href="">Payer en ligne</a>
+                    <button id="suivantTo2">Payer en ligne</button>
                     <p>ou</p>
                     <a href="">Réserver en magasin</a>
                 </div>
@@ -416,7 +413,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <img src="{{ asset('assets/images/Achat_done.png') }}" alt="">
+                            <img src="{{ asset('assets/images/Validation.png') }}" alt="">
                             <h5 class="modal-title" id="exampleModalTitle">Votre inscription est enregistrée</h5>
                             <p>Vous allez recevoir un mail de confirmation.</p>
                             <button id="suivantTo3" type="button" class="close btn btn-fondbleu" data-dismiss="modal" aria-label="Close">Poursuivre mes achats</button>
@@ -470,28 +467,47 @@
             $(this).addClass('active');
             $(".displayMore").find("> div > div:first-of-type").removeClass("active");
             $(this).find("> div > div:first-of-type").addClass("active");
+            $("#monAdresse").find("div").find("div").find("div").find("img").attr("src", "{{ asset('assets/images/livraison_domicile.png') }}")
+            $("#getPaiement").find("div").find("div").find("div").find("img").attr("src", "{{ asset('assets/images/blue_cb.png') }}")
+        });
+        $("#suivantTo2").click(function(){
+          $("#step1").hide();
+          $("#step2").show();
+          $("#etapes").find("img").attr("src","{{ asset('assets/images/etape2.png') }}")
         });
         $("#suivantTo3").click(function () {
             $("#step2").hide();
             $("#step3").toggle();
             $("#modal2").css("display","none")
+            $("#etapes").find("img").attr("src","{{ asset('assets/images/etape3.png') }}")
         })
         $("#suivantTo4").click(function () {
             $("#suivantTo4").hide();
             $("#step3").hide();
             $("#step4").toggle();
+            $("#etapes").find("img").attr("src","{{ asset('assets/images/etape4.png') }}")
         })
         $("#monAdresse").click(function () {
             $("#suivantTo4").show();
+            $("#monAdresse").find("div").find("div").find("div").find("img").attr("src", "{{ asset('assets/images/maison_white.png') }}")
         });
         $("#getPaiement").click(function () {
             $("#suivantTo5").show();
+            $("#getPaiement").find("div").find("div").find("div").find("img").attr("src", "{{ asset('assets/images/white_cb.png') }}")
         });
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
     <script>
+        $("#less").click(function () {
+            if (parseInt(parseInt($("#quantity").text())) > 1) {
+                $("#quantity").text(parseInt($("#quantity").text()) - 1);
+            }
+        });
+        $("#more").click(function () {
+            $("#quantity").text(parseInt($("#quantity").text()) + 1);
+        })
         $('#exampleModal').on('shown.bs.modal', function () {
             var modal = $(this);
             $.ajax('{{ path('popUpProduit') }}', {
