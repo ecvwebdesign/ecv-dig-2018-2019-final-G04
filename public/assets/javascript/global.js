@@ -30,7 +30,8 @@ jQuery(document).ready(function () {
     $('#meilleur-prix').slick({
         centerMode: true,
         centerPadding: '40px',
-        slidesToShow: 2,
+        slidesToShow: 1,
+        infinite: false,
         arrows: false,
         dots: false,
     });
